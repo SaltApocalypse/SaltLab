@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+  logs: false;
+}
+@import "@salta/theme-infinite";
+
+/* 让 Tailwind 扫描 @salta/theme-infinite 组件类名（相对本 CSS 文件的路径：src/ → ../） */
+@source "../node_modules/@salta/theme-infinite/dist";
+
+/* 隐藏滚动条（保留滚动能力）：避免内容高度变化时滑动条出现/消失造成突兀 */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
