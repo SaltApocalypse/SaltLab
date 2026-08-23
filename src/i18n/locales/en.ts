@@ -57,6 +57,9 @@ export default {
     general: 'General',
     theme: 'Theme',
     language: 'Language',
+    layout: 'Desktop Layout',
+    resetLayout: 'Reset default desktop layout',
+    reset: 'Reset',
     visual: 'Visual Effects',
     windowMask: 'Window Mask',
     windowMaskModes: {

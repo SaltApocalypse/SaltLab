@@ -68,6 +68,8 @@ interface DesktopStore {
   moveIcon: (id: string, position: Position, bounds: Bounds) => void
   selectIcon: (id: string | null) => void
   setWindowMaskMode: (mode: WindowMaskMode) => void
+  /** 恢复默认桌面布局（图标位置重置为配置默认） */
+  resetIconPositions: () => void
   fitIcons: (bounds: Bounds) => void
 }
 
@@ -188,6 +190,14 @@ export const useDesktopStore = create<DesktopStore>((set) => ({
   selectIcon: (id) => set({ selectedIconId: id }),
 
   setWindowMaskMode: (mode) => set({ windowMaskMode: mode }),
+
+  resetIconPositions: () =>
+    set((state) => ({
+      icons: state.icons.map((icon) => {
+        const def = desktopIcons.find((item) => item.id === icon.id)
+        return def ? { ...icon, position: def.position } : icon
+      }),
+    })),
 
   fitIcons: (bounds) =>
     set((state) => {

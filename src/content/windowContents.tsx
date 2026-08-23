@@ -160,6 +160,16 @@ export function SettingsContent() {
       </div>
       {/* 板块分隔线 */}
       <div className="mx-auto my-4 h-px w-[90%] bg-base-300" />
+      {/* 桌面布局 */}
+      <div>
+        <h3 className="mb-3 text-sm font-semibold">{t('settings.layout')}</h3>
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-sm text-base-content">{t('settings.resetLayout')}</span>
+          <LightButton onClick={resetIconPositions}>{t('settings.reset')}</LightButton>
+        </div>
+      </div>
+      {/* 板块分隔线 */}
+      <div className="mx-auto my-4 h-px w-[90%] bg-base-300" />
       {/* 视觉效果 */}
       <div>
         <h3 className="mb-3 text-sm font-semibold">{t('settings.visual')}</h3>
