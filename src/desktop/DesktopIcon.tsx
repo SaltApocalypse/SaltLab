@@ -1,6 +1,7 @@
 import { useNavigate } from '@tanstack/react-router'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ExternalLink } from 'lucide-react'
 import { useTheme } from '../theme/ThemeProvider'
 import { usePointerDrag } from '../hooks/usePointerDrag'
 import { useDesktopBounds } from './desktopContext'
@@ -109,11 +110,13 @@ export function DesktopIcon({ icon }: { icon: DesktopIconData }) {
         <icon.icon size={28} strokeWidth={1.8} />
       </IconButton>
       <span
-        className={`max-w-full truncate rounded px-1 text-xs ${
+        className={`max-w-full break-words rounded px-1 text-center text-xs leading-tight ${
           highlighted ? 'text-primary' : 'text-base-content'
         }`}
       >
         {label}
+        {/* url 类型：文本右侧的 external-link 图标提示（新标签页打开） */}
+        {icon.type === 'url' && <ExternalLink size={10} className="ml-0.5 inline-block" />}
       </span>
     </div>
   )

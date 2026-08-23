@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { SquareArrowOutUpRight, X } from 'lucide-react'
+import { ExternalLink, X } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { windowExternalUrls } from '../config/windowExternalUrls'
@@ -98,7 +98,7 @@ export function Window({ window: win, children }: WindowProps) {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={() => window.open(externalUrl, '_blank', 'noopener,noreferrer')}
               >
-                <SquareArrowOutUpRight size={14} />
+                <ExternalLink size={14} />
               </CloseButton>
             )}
             <CloseButton

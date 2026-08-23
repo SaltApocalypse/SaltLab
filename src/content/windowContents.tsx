@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { SquareArrowOutUpRight } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { windowExternalUrls } from '../config/windowExternalUrls'
 import type { DropdownOption } from '@salta/theme-infinite/components'
 import { changeLanguage, getCurrentLang, LANGUAGES, type Lang } from '../i18n'
@@ -41,7 +41,7 @@ export function LabContent() {
               className="inline-flex items-center gap-1 text-primary underline-offset-4 transition-colors duration-300 hover:underline"
             >
               {t('content.labList.itgOpenExternal')}
-              <SquareArrowOutUpRight size={12} />
+              <ExternalLink size={12} />
             </a>
           </div>
         </div>
