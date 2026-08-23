@@ -1,8 +1,9 @@
-import { FileText, FlaskConical, FolderArchive, FolderKanban, ListTodo, Settings } from 'lucide-react'
+import { FaceGrinning, FileText, FlaskConical, FolderArchive, FolderKanban, ListTodo, Settings } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 /** 窗口标题栏图标：按窗口 type 查找 */
 export const windowIcons: Record<string, LucideIcon> = {
+  welcome: FaceGrinning,
   lab: FlaskConical,
   projects: FolderKanban,
   about: FileText,

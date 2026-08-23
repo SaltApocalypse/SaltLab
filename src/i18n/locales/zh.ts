@@ -3,8 +3,11 @@ export default {
     saltlab: 'SaltLab',
     todo: '待办',
     past: '旧日',
+    welcome: '欢迎',
+    feedback: '交流、意见与反馈',
   },
   windows: {
+    welcome: '欢迎',
     lab: 'SaltLab',
     projects: '项目',
     about: '关于',
@@ -31,6 +34,17 @@ export default {
     },
     aboutTitle: '关于',
     aboutIntro: '以桌面环境为形态的个人博客。目前仍是原型。',
+    welcome: {
+      intro: '欢迎来到我的个人站点，下面是桌面导航：',
+      desktop: {
+        feedback: '联系我XD',
+        saltlab: '各种实验性质项目',
+        past: '原博客站点',
+        todo: '给自己看的待办',
+      },
+      dockIntro: '另外，底部Dock栏：',
+      dockSettings: '就是设置',
+    },
     labList: {
       itgTitle: 'Infinite Title Generator',
       itgIntro:

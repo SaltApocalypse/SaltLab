@@ -73,12 +73,53 @@ export function AboutContent() {
   )
 }
 
+export function WelcomeContent() {
+  const { t } = useTranslation()
+  return (
+    <div className="space-y-4 text-sm">
+      <p className="text-base-content/70">{t('content.welcome.intro')}</p>
+      <ul className="list-disc space-y-1 pl-5 text-base-content/70">
+        <li>
+          <b className="text-base-content">{t('icons.feedback')}</b>
+          {'：'}
+          {t('content.welcome.desktop.feedback')}
+        </li>
+        <li>
+          <b className="text-base-content">{t('icons.saltlab')}</b>
+          {'：'}
+          {t('content.welcome.desktop.saltlab')}
+        </li>
+        <li>
+          <b className="text-base-content">{t('windows.past')}</b>
+          {'：'}
+          {t('content.welcome.desktop.past')}
+        </li>
+        <li>
+          <b className="text-base-content">{t('windows.todo')}</b>
+          {'：'}
+          {t('content.welcome.desktop.todo')}
+        </li>
+      </ul>
+      <p className="text-base-content/70">{t('content.welcome.dockIntro')}</p>
+      <ul className="list-disc space-y-1 pl-5 text-base-content/70">
+        <li>
+          <b className="text-base-content">{t('dock.settings')}</b>
+          {'：'}
+          {t('content.welcome.dockSettings')}
+        </li>
+      </ul>
+    </div>
+  )
+}
+
 export function SettingsContent() {
   const { t } = useTranslation()
   const { theme, themes, themeId, setTheme } = useTheme()
   const Dropdown = theme.components.Dropdown
+  const LightButton = theme.components.LightButton
   const windowMaskMode = useDesktopStore((state) => state.windowMaskMode)
   const setWindowMaskMode = useDesktopStore((state) => state.setWindowMaskMode)
+  const resetIconPositions = useDesktopStore((state) => state.resetIconPositions)
 
   const themeOptions: DropdownOption[] = (Object.keys(themes) as ThemeId[]).map((id) => ({
     value: id,

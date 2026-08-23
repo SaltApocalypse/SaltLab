@@ -7,9 +7,11 @@ import {
   ProjectsContent,
   SettingsContent,
   TodoContent,
+  WelcomeContent,
 } from './windowContents'
 
 export const windowContents: Record<string, ComponentType> = {
+  welcome: WelcomeContent,
   lab: LabContent,
   projects: ProjectsContent,
   about: AboutContent,

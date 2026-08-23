@@ -3,8 +3,11 @@ export default {
     saltlab: 'SaltLab',
     todo: 'To-Do',
     past: 'Past',
+    welcome: 'Welcome',
+    feedback: 'Feedback',
   },
   windows: {
+    welcome: 'Welcome',
     lab: 'SaltLab',
     projects: 'Projects',
     about: 'About',
@@ -31,6 +34,17 @@ export default {
     },
     aboutTitle: 'About',
     aboutIntro: 'A personal blog built as a desktop environment. Still a prototype.',
+    welcome: {
+      intro: 'Welcome to my personal site. Here is the desktop navigation:',
+      desktop: {
+        feedback: 'Contact me XD',
+        saltlab: 'Various experimental projects',
+        past: 'The original blog site',
+        todo: 'A to-do list for myself',
+      },
+      dockIntro: 'Also, the Dock at the bottom:',
+      dockSettings: 'Just the settings',
+    },
     labList: {
       itgTitle: 'Infinite Title Generator',
       itgIntro:
