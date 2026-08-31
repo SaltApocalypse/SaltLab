@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { getCurrentLang } from '../i18n'
 
 /**
  * StatusBar —— 桌面四周边界装饰框 + 状态栏雏形
@@ -18,8 +19,8 @@ export function StatusBar() {
     return () => clearInterval(timer)
   }, [])
 
-  const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-  const date = now.toLocaleDateString([], { month: 'long', day: 'numeric' })
+  const time = now.toLocaleTimeString(localeOf(getCurrentLang()), { hour: '2-digit', minute: '2-digit' })
+  const date = now.toLocaleDateString(localeOf(getCurrentLang()), { month: 'long', day: 'numeric' })
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0">
@@ -33,4 +34,9 @@ export function StatusBar() {
       </div>
     </div>
   )
+}
+
+/** 应用语言 → toLocale* 区域标识（日期/时间随界面语言切换） */
+function localeOf(lang: ReturnType<typeof getCurrentLang>): string {
+  return lang === 'zh' ? 'zh-CN' : 'en-US'
 }
