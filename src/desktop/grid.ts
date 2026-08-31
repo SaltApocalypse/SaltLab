@@ -2,6 +2,8 @@ import type { Bounds, Position, Size } from './types'
 
 export const ICON_SLOT = 116
 export const DESKTOP_PADDING = 24
+/** 顶部留白：与顶部线框（top-8）的间距，参照最左侧图标距左边框的间隙（24 - 8 = 16px），故 32 + 16 = 48 */
+export const DESKTOP_TOP_PADDING = 48
 export const ICON_WIDTH = 88
 export const ICON_HEIGHT = 96
 
@@ -13,7 +15,7 @@ export interface GridCell {
 export function gridCell(col: number, row: number): Position {
   return {
     x: DESKTOP_PADDING + col * ICON_SLOT,
-    y: DESKTOP_PADDING + row * ICON_SLOT,
+    y: DESKTOP_TOP_PADDING + row * ICON_SLOT,
   }
 }
 
@@ -21,7 +23,10 @@ export function gridCell(col: number, row: number): Position {
 export function gridSize(bounds: Bounds): { cols: number; rows: number } {
   return {
     cols: Math.max(1, Math.floor((bounds.width - DESKTOP_PADDING * 2) / ICON_SLOT)),
-    rows: Math.max(1, Math.floor((bounds.height - DESKTOP_PADDING * 2) / ICON_SLOT)),
+    rows: Math.max(
+      1,
+      Math.floor((bounds.height - DESKTOP_PADDING - DESKTOP_TOP_PADDING) / ICON_SLOT),
+    ),
   }
 }
 
@@ -30,7 +35,7 @@ export function cellOf(x: number, y: number, bounds: Bounds): GridCell {
   const { cols, rows } = gridSize(bounds)
   return {
     col: clamp(Math.round((x - DESKTOP_PADDING) / ICON_SLOT), 0, cols - 1),
-    row: clamp(Math.round((y - DESKTOP_PADDING) / ICON_SLOT), 0, rows - 1),
+    row: clamp(Math.round((y - DESKTOP_TOP_PADDING) / ICON_SLOT), 0, rows - 1),
   }
 }
 

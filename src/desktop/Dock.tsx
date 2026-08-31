@@ -1,5 +1,8 @@
+import type { ComponentType } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import { useTheme } from '../theme/ThemeProvider'
+import type { PanelProps } from '../theme/themes'
+import { useDesktopStore } from './desktopStore'
 
 export interface DockItem {
   id: string
@@ -19,13 +22,23 @@ export interface DockItem {
  */
 export function Dock({ items }: { items: DockItem[] }) {
   const { theme } = useTheme()
-  const Panel = theme.components.Panel
+  // Panel 跨主题契约：tape/tilt 由共享 PanelProps 提供（Dock 不需要便利贴装饰）
+  const Panel = theme.components.Panel as unknown as ComponentType<PanelProps>
   const Button = theme.components.Button
   const Tooltip = theme.components.Tooltip
+  // 有焦点窗体时，Dock 置于其下一层（焦点窗体可覆盖 Dock），否则置顶
+  const activeZIndex = useDesktopStore((state) => {
+    const active = state.windows.find((win) => win.id === state.activeWindowId)
+    return active?.zIndex
+  })
+  const dockZIndex = activeZIndex !== undefined ? activeZIndex - 1 : 999
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-[999] -translate-x-1/2">
-      <Panel className="flex w-fit items-center gap-3 p-3!">
+    <div
+      className="fixed bottom-4 left-1/2 -translate-x-1/2"
+      style={{ zIndex: dockZIndex }}
+    >
+      <Panel tilt={false} className="flex w-fit items-center gap-3 p-3!">
         {items.map((item) => (
           <Tooltip key={item.id} content={item.label}>
             <Button

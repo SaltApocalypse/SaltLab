@@ -18,6 +18,10 @@ export default {
   },
   dock: {
     settings: '设置',
+    shutdown: '关机',
+  },
+  statusBar: {
+    localTime: '本地时间',
   },
   context: {
     theme: '主题',
