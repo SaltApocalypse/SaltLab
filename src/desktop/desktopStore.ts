@@ -65,6 +65,7 @@ interface DesktopStore {
   /** 所有窗口失去焦点（点击桌面空白处时） */
   blurWindows: () => void
   moveWindow: (id: string, position: Position) => void
+  resizeWindow: (id: string, size: Size) => void
   moveIcon: (id: string, position: Position, bounds: Bounds) => void
   selectIcon: (id: string | null) => void
   setWindowMaskMode: (mode: WindowMaskMode) => void
@@ -166,6 +167,11 @@ export const useDesktopStore = create<DesktopStore>((set) => ({
   moveWindow: (id, position) =>
     set((state) => ({
       windows: state.windows.map((win) => (win.id === id ? { ...win, position } : win)),
+    })),
+
+  resizeWindow: (id, size) =>
+    set((state) => ({
+      windows: state.windows.map((win) => (win.id === id ? { ...win, size } : win)),
     })),
 
   moveIcon: (id, position, bounds) =>
