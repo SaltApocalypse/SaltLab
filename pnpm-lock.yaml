@@ -12,8 +12,8 @@ importers:
         specifier: git+ssh://git@github.com/SaltApocalypse/salta-theme-infinite.git#v0.3.0
         version: https://codeload.github.com/SaltApocalypse/salta-theme-infinite/tar.gz/cede2f010d1b13666295d3c5e7551bf17ab03e58(daisyui@5.7.20)(lucide-react@1.33.0(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       '@salta/theme-papercut':
-        specifier: git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.0
-        version: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
+        specifier: git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.1
+        version: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/c71e8435e6936f216ec117595a8b7034bc9cfb05(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       '@tanstack/react-router':
         specifier: ^1.170.31
         version: 1.170.31(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -399,9 +399,9 @@ packages:
       react-dom: '>=18'
       tailwindcss: ^4
 
-  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502':
-    resolution: {gitHosted: true, integrity: sha512-ElUPK4S+0Iy1/AQiZcLWIhetMa1cC21FDhnBxnXayrbkZysFv/k142fmtifJAmxwzKczbdhKDO7bhXv7YgTeZw==, tarball: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502}
-    version: 0.3.0
+  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/c71e8435e6936f216ec117595a8b7034bc9cfb05':
+    resolution: {gitHosted: true, integrity: sha512-9hcNQPEWrfqcD72WoIbugKdKjcg1TkqITZcf5KXccsyuP76nRYFbjbNpo96ddQKHqSa2VJkSz70PiJNMor3/TA==, tarball: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/c71e8435e6936f216ec117595a8b7034bc9cfb05}
+    version: 0.3.1
     peerDependencies:
       daisyui: ^5
       react: '>=18'
@@ -1425,7 +1425,7 @@ snapshots:
       react-dom: 19.2.8(react@19.2.8)
       tailwindcss: 4.3.3
 
-  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
+  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/c71e8435e6936f216ec117595a8b7034bc9cfb05(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
     dependencies:
       daisyui: 5.7.20
       react: 19.2.8

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@salta/theme-infinite": "git+ssh://git@github.com/SaltApocalypse/salta-theme-infinite.git#v0.3.0",
-    "@salta/theme-papercut": "git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.0",
+    "@salta/theme-papercut": "git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.1",
     "@tanstack/react-router": "^1.170.31",
     "@tanstack/router-plugin": "^1.168.34",
     "daisyui": "^5.7.20",
