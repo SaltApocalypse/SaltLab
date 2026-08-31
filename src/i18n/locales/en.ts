@@ -63,11 +63,12 @@ export default {
   settings: {
     general: 'General',
     theme: 'Theme',
+    darkMode: 'Dark Mode',
     language: 'Language',
     layout: 'Desktop Layout',
     resetLayout: 'Reset default desktop layout',
     reset: 'Reset',
-    visual: 'Visual Effects',
+    resetDone: 'Desktop layout reset',
     windowMask: 'Window Mask',
     windowMaskModes: {
       focus: 'Focused only',

@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import type { ComponentType } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Blocks, ExternalLink } from 'lucide-react'
 import { windowExternalUrls } from '../config/windowExternalUrls'
-import type { DropdownOption } from '@salta/theme-infinite/components'
+import type { AlertProps, DropdownOption } from '../theme/themes'
 import { changeLanguage, getCurrentLang, LANGUAGES, type Lang } from '../i18n'
 import { useTheme } from '../theme/ThemeProvider'
 import type { ThemeId } from '../theme/themes'
@@ -114,12 +115,16 @@ export function WelcomeContent() {
 
 export function SettingsContent() {
   const { t } = useTranslation()
-  const { theme, themes, themeId, setTheme } = useTheme()
+  const { theme, themes, themeId, setTheme, darkMode, setDarkMode } = useTheme()
   const Dropdown = theme.components.Dropdown
   const LightButton = theme.components.LightButton
+  const Toggle = theme.components.Toggle
+  // Alert 跨主题契约：重置桌面布局后弹出 Toast 提示
+  const Alert = theme.components.Alert as unknown as ComponentType<AlertProps>
   const windowMaskMode = useDesktopStore((state) => state.windowMaskMode)
   const setWindowMaskMode = useDesktopStore((state) => state.setWindowMaskMode)
   const resetIconPositions = useDesktopStore((state) => state.resetIconPositions)
+  const [showResetAlert, setShowResetAlert] = useState(false)
 
   const themeOptions: DropdownOption[] = (Object.keys(themes) as ThemeId[]).map((id) => ({
     value: id,
@@ -134,19 +139,10 @@ export function SettingsContent() {
 
   return (
     <div>
-      {/* 通用 */}
+      {/* 通用：语言（与主题无关的通用项） */}
       <div>
         <h3 className="mb-3 text-sm font-semibold">{t('settings.general')}</h3>
         <div className="space-y-3">
-          <div className="flex items-center justify-between gap-3">
-            <span className="text-sm text-base-content">{t('settings.theme')}</span>
-            <Dropdown
-              className="w-28"
-              value={themeId}
-              options={themeOptions}
-              onChange={(value) => setTheme(value as ThemeId)}
-            />
-          </div>
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-base-content">{t('settings.language')}</span>
             <Dropdown
@@ -160,31 +156,61 @@ export function SettingsContent() {
       </div>
       {/* 板块分隔线 */}
       <div className="mx-auto my-4 h-px w-[90%] bg-base-300" />
+      {/* 主题：主题选择 + 夜间模式（仅支持日/夜间双模式的主题，如 papercut）+ 窗体遮罩（仅 infinite 生效） */}
+      <div>
+        <h3 className="mb-3 text-sm font-semibold">{t('settings.theme')}</h3>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-base-content">{t('settings.theme')}</span>
+            <Dropdown
+              className="w-28"
+              value={themeId}
+              options={themeOptions}
+              onChange={(value) => setTheme(value as ThemeId)}
+            />
+          </div>
+          {theme.capabilities.dark && (
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-sm text-base-content">{t('settings.darkMode')}</span>
+              <Toggle checked={darkMode} onChange={setDarkMode} />
+            </div>
+          )}
+          {theme.capabilities.windowMask && (
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-sm text-base-content">{t('settings.windowMask')}</span>
+              <Dropdown
+                className="w-28"
+                value={windowMaskMode}
+                options={maskOptions}
+                onChange={(value) => setWindowMaskMode(value as WindowMaskMode)}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+      {/* 板块分隔线 */}
+      <div className="mx-auto my-4 h-px w-[90%] bg-base-300" />
       {/* 桌面布局 */}
       <div>
         <h3 className="mb-3 text-sm font-semibold">{t('settings.layout')}</h3>
         <div className="flex items-center justify-between gap-3">
           <span className="text-sm text-base-content">{t('settings.resetLayout')}</span>
-          <LightButton onClick={resetIconPositions}>{t('settings.reset')}</LightButton>
+          <LightButton
+            onClick={() => {
+              resetIconPositions()
+              setShowResetAlert(true)
+            }}
+          >
+            {t('settings.reset')}
+          </LightButton>
         </div>
       </div>
-      {/* 板块分隔线 */}
-      <div className="mx-auto my-4 h-px w-[90%] bg-base-300" />
-      {/* 视觉效果 */}
-      <div>
-        <h3 className="mb-3 text-sm font-semibold">{t('settings.visual')}</h3>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between gap-3">
-            <span className="text-sm text-base-content">{t('settings.windowMask')}</span>
-            <Dropdown
-              className="w-28"
-              value={windowMaskMode}
-              options={maskOptions}
-              onChange={(value) => setWindowMaskMode(value as WindowMaskMode)}
-            />
-          </div>
-        </div>
-      </div>
+      {/* 重置成功 Toast */}
+      {showResetAlert && (
+        <Alert variant="success" onClose={() => setShowResetAlert(false)}>
+          {t('settings.resetDone')}
+        </Alert>
+      )}
     </div>
   )
 }

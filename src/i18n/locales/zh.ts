@@ -63,11 +63,12 @@ export default {
   settings: {
     general: '通用',
     theme: '主题',
+    darkMode: '夜间模式',
     language: '语言',
     layout: '桌面布局',
     resetLayout: '恢复默认桌面布局',
     reset: '重置',
-    visual: '视觉效果',
+    resetDone: '桌面布局已重置',
     windowMask: '窗体遮罩',
     windowMaskModes: {
       focus: '仅焦点',
