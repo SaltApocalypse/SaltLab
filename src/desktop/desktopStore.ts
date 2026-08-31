@@ -76,7 +76,7 @@ interface DesktopStore {
 const DEFAULT_WINDOW_SIZE: Size = { width: 560, height: 400 }
 
 // 沉浸式窗口类型：默认尺寸 = 视口四边各收缩一个图标网格距离（ICON_SLOT）
-const IMMERSIVE_WINDOW_TYPES: ReadonlySet<string> = new Set(['past', 'itg'])
+const IMMERSIVE_WINDOW_TYPES: ReadonlySet<string> = new Set(['past', 'itg', 'teririBlocks'])
 
 /** 按窗口类型计算默认尺寸；沉浸式窗口贴近全屏，其余使用标准尺寸 */
 function windowDefaultSize(type: string, viewportWidth: number, viewportHeight: number): Size {

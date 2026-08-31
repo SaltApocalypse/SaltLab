@@ -5,6 +5,7 @@ export default {
     past: 'Past',
     welcome: 'Welcome',
     feedback: 'Feedback',
+    games: 'Games',
   },
   windows: {
     welcome: 'Welcome',
@@ -15,6 +16,8 @@ export default {
     todo: 'To-Do',
     past: 'Past',
     itg: 'Infinite Title Generator',
+    games: 'Games',
+    teririBlocks: 'Teriri Blocks',
   },
   dock: {
     settings: 'Settings',

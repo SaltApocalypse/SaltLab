@@ -2,4 +2,5 @@
 export const windowExternalUrls: Record<string, string> = {
   past: 'https://olds.salta.top/',
   itg: 'https://lab.salta.top/infinite-title-generator/',
+  teririBlocks: 'https://game.salta.top/teriri-blocks/',
 }

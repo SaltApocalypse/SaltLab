@@ -1,11 +1,13 @@
 import type { ComponentType } from 'react'
 import {
   AboutContent,
+  GamesContent,
   ItgContent,
   LabContent,
   PastContent,
   ProjectsContent,
   SettingsContent,
+  TeririBlocksContent,
   TodoContent,
   WelcomeContent,
 } from './windowContents'
@@ -19,4 +21,6 @@ export const windowContents: Record<string, ComponentType> = {
   todo: TodoContent,
   past: PastContent,
   itg: ItgContent,
+  games: GamesContent,
+  teririBlocks: TeririBlocksContent,
 }

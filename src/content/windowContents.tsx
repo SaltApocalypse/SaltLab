@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ExternalLink } from 'lucide-react'
+import { Blocks, ExternalLink } from 'lucide-react'
 import { windowExternalUrls } from '../config/windowExternalUrls'
 import type { DropdownOption } from '@salta/theme-infinite/components'
 import { changeLanguage, getCurrentLang, LANGUAGES, type Lang } from '../i18n'
@@ -227,4 +227,36 @@ export function PastContent() {
 
 export function ItgContent() {
   return <ExternalSiteContent src={windowExternalUrls.itg!} />
+}
+
+export function TeririBlocksContent() {
+  return <ExternalSiteContent src={windowExternalUrls.teririBlocks!} />
+}
+
+/** 游戏板块：Grid 布局展示游戏卡片，点击在窗体内打开对应游戏 */
+export function GamesContent() {
+  const { t } = useTranslation()
+  const openWindow = useDesktopStore((state) => state.openWindow)
+  const games = [
+    {
+      id: 'teririBlocks',
+      icon: Blocks,
+      title: t('windows.teririBlocks'),
+    },
+  ]
+  return (
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+      {games.map((game) => (
+        <button
+          key={game.id}
+          type="button"
+          onClick={() => openWindow(game.id, game.title)}
+          className="group flex flex-col items-center gap-2 border border-base-300 bg-base-100/50 p-4 text-center transition-colors duration-300 hover:border-primary hover:text-primary"
+        >
+          <game.icon size={32} />
+          <span className="text-sm font-medium">{game.title}</span>
+        </button>
+      ))}
+    </div>
+  )
 }

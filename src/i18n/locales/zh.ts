@@ -5,6 +5,7 @@ export default {
     past: '旧日',
     welcome: '欢迎',
     feedback: '交流、意见与反馈',
+    games: '游戏',
   },
   windows: {
     welcome: '欢迎',
@@ -15,6 +16,8 @@ export default {
     todo: '待办',
     past: '旧日',
     itg: 'Infinite Title Generator',
+    games: '游戏',
+    teririBlocks: '特日日方块',
   },
   dock: {
     settings: '设置',

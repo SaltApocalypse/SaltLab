@@ -1,4 +1,4 @@
-import { FaceGrinning, FlaskConical, FolderArchive, ListTodo, MessageSquareHeart } from 'lucide-react'
+import { FaceGrinning, FlaskConical, FolderArchive, Gamepad2, ListTodo, MessageSquareHeart } from 'lucide-react'
 import { gridCell } from '../desktop/grid'
 import type { DesktopIconData } from '../desktop/types'
 
@@ -28,12 +28,20 @@ export const desktopIcons: DesktopIconData[] = [
     position: gridCell(0, 1),
   },
   {
+    id: 'games',
+    titleKey: 'icons.games',
+    icon: Gamepad2,
+    type: 'window',
+    target: 'games',
+    position: gridCell(1, 1),
+  },
+  {
     id: 'past',
     titleKey: 'icons.past',
     icon: FolderArchive,
     type: 'window',
     target: 'past',
-    position: gridCell(1, 1),
+    position: gridCell(2, 1),
   },
   {
     id: 'todo',
