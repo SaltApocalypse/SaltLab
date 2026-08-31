@@ -11,7 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@salta/theme-infinite": "github:SaltApocalypse/salta-theme-infinite#v0.2.0",
+    "@salta/theme-infinite": "file:../salta-theme-infinite",
+    "@salta/theme-papercut": "file:../salta-theme-papercut",
     "@tanstack/react-router": "^1.170.31",
     "@tanstack/router-plugin": "^1.168.34",
     "daisyui": "^5.7.20",
