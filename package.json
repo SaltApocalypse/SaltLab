@@ -11,8 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@salta/theme-infinite": "file:../salta-theme-infinite",
-    "@salta/theme-papercut": "file:../salta-theme-papercut",
+    "@salta/theme-infinite": "git+ssh://git@github.com/SaltApocalypse/salta-theme-infinite.git#v0.3.0",
+    "@salta/theme-papercut": "git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.0",
     "@tanstack/react-router": "^1.170.31",
     "@tanstack/router-plugin": "^1.168.34",
     "daisyui": "^5.7.20",

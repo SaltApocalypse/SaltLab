@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@salta/theme-infinite':
-        specifier: file:../salta-theme-infinite
-        version: file:../salta-theme-infinite(daisyui@5.7.20)(lucide-react@1.33.0(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
+        specifier: git+ssh://git@github.com/SaltApocalypse/salta-theme-infinite.git#v0.3.0
+        version: https://codeload.github.com/SaltApocalypse/salta-theme-infinite/tar.gz/cede2f010d1b13666295d3c5e7551bf17ab03e58(daisyui@5.7.20)(lucide-react@1.33.0(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       '@salta/theme-papercut':
-        specifier: file:../salta-theme-papercut
-        version: file:../salta-theme-papercut(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
+        specifier: git+ssh://git@github.com/SaltApocalypse/salta-theme-papercut.git#v0.3.0
+        version: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       '@tanstack/react-router':
         specifier: ^1.170.31
         version: 1.170.31(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -389,8 +389,9 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@salta/theme-infinite@file:../salta-theme-infinite':
-    resolution: {directory: ../salta-theme-infinite, type: directory}
+  '@salta/theme-infinite@https://codeload.github.com/SaltApocalypse/salta-theme-infinite/tar.gz/cede2f010d1b13666295d3c5e7551bf17ab03e58':
+    resolution: {gitHosted: true, integrity: sha512-KFzJTBPsvqyz1iflMYab8bvgCCf8161/Gm2YokpLFoPQBHJd5BMoFzBSl410dXtGwFxVZiHR+7kLBPRsYB6ncg==, tarball: https://codeload.github.com/SaltApocalypse/salta-theme-infinite/tar.gz/cede2f010d1b13666295d3c5e7551bf17ab03e58}
+    version: 0.3.0
     peerDependencies:
       daisyui: ^5
       lucide-react: '>=0.4'
@@ -398,8 +399,9 @@ packages:
       react-dom: '>=18'
       tailwindcss: ^4
 
-  '@salta/theme-papercut@file:../salta-theme-papercut':
-    resolution: {directory: ../salta-theme-papercut, type: directory}
+  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502':
+    resolution: {gitHosted: true, integrity: sha512-ElUPK4S+0Iy1/AQiZcLWIhetMa1cC21FDhnBxnXayrbkZysFv/k142fmtifJAmxwzKczbdhKDO7bhXv7YgTeZw==, tarball: https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502}
+    version: 0.3.0
     peerDependencies:
       daisyui: ^5
       react: '>=18'
@@ -1415,7 +1417,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@salta/theme-infinite@file:../salta-theme-infinite(daisyui@5.7.20)(lucide-react@1.33.0(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
+  '@salta/theme-infinite@https://codeload.github.com/SaltApocalypse/salta-theme-infinite/tar.gz/cede2f010d1b13666295d3c5e7551bf17ab03e58(daisyui@5.7.20)(lucide-react@1.33.0(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
     dependencies:
       daisyui: 5.7.20
       lucide-react: 1.33.0(react@19.2.8)
@@ -1423,7 +1425,7 @@ snapshots:
       react-dom: 19.2.8(react@19.2.8)
       tailwindcss: 4.3.3
 
-  '@salta/theme-papercut@file:../salta-theme-papercut(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
+  '@salta/theme-papercut@https://codeload.github.com/SaltApocalypse/salta-theme-papercut/tar.gz/affc745a3e53d4fc093a37ff66ba261da2c1b502(daisyui@5.7.20)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
     dependencies:
       daisyui: 5.7.20
       react: 19.2.8
