@@ -1,11 +1,12 @@
 export default {
   icons: {
     saltlab: 'SaltLab',
-    todo: 'To-Do',
     past: 'Past',
     welcome: 'Welcome',
     feedback: 'Feedback',
     games: 'Games',
+    settings: 'Settings',
+    music: 'Music',
   },
   windows: {
     welcome: 'Welcome',
@@ -13,24 +14,26 @@ export default {
     projects: 'Projects',
     about: 'About',
     settings: 'Settings',
-    todo: 'To-Do',
     past: 'Past',
     itg: 'Infinite Title Generator',
     games: 'Games',
     teririBlocks: 'Teriri Blocks',
-  },
-  dock: {
-    settings: 'Settings',
-    shutdown: 'Shutdown',
+    music: 'Music',
   },
   statusBar: {
-    localTime: 'Local Time',
+    shutdown: 'Close page',
+  },
+  miniCard: {
+    close: 'Close card',
   },
   context: {
     theme: 'Theme',
   },
   window: {
     close: 'Close window',
+    minimize: 'Minimize window',
+    maximize: 'Maximize window',
+    restore: 'Restore window',
     openExternal: 'Open in new tab',
   },
   content: {
@@ -47,10 +50,7 @@ export default {
         feedback: 'Contact me XD',
         saltlab: 'Various experimental projects',
         past: 'The original blog site',
-        todo: 'A to-do list for myself',
       },
-      dockIntro: 'Also, the Dock at the bottom:',
-      dockSettings: 'Just the settings',
     },
     labList: {
       itgTitle: 'Infinite Title Generator',
@@ -58,6 +58,25 @@ export default {
         'Infinite Title Generator is a fan project inspired by Halo Infinite: it replicates the game\u2019s login-screen title animation on the frontend.',
       itgOpen: 'Experience Now',
       itgOpenExternal: 'Open in new tab',
+    },
+    gamesList: {
+      teririBlocksIntro: "Theresa's version of Tetris",
+      teririBlocksOpen: 'Play Now',
+      teririBlocksOpenExternal: 'Open in new tab',
+    },
+    music: {
+      previous: 'Previous track',
+      pause: 'Pause',
+      play: 'Play',
+      next: 'Next track',
+      mute: 'Mute',
+      unmute: 'Unmute',
+      seek: 'Seek',
+      noPreview: 'No preview available',
+      playbackError: 'Playback failed',
+      openAppleMusic: 'Open in Apple Music',
+      preview: 'Preview',
+      volume: 'Volume',
     },
   },
   settings: {

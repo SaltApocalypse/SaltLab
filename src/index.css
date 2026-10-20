@@ -10,6 +10,78 @@
 @source "../node_modules/@salta/theme-infinite/dist";
 @source "../node_modules/@salta/theme-papercut/dist";
 
+/* 应用层动效（克制风格，仅桌面壳层使用；均配合 motion-safe 使用） */
+@theme {
+  /* 窗口打开：轻微缩放 + 淡入 */
+  --animate-window-in: window-in 0.18s ease-out;
+
+  @keyframes window-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* 桌面图标入场：淡入 + 轻微上移（backwards 让 animation-delay 期间保持起始态） */
+  --animate-icon-in: icon-in 0.24s ease-out backwards;
+
+  @keyframes icon-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 顶部状态栏入场：下滑 + 淡入 */
+  --animate-status-in: status-in 0.24s ease-out;
+
+  @keyframes status-in {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 播放中均衡器（每根柱子不同 delay，scaleY 起伏） */
+  --animate-eq: eq 0.75s ease-in-out infinite alternate;
+
+  @keyframes eq {
+    from {
+      transform: scaleY(0.28);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  /* 音乐封面切换：淡入 + 轻微缩放 */
+  --animate-artwork-in: artwork-in 0.35s ease-out;
+
+  @keyframes artwork-in {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+}
+
 /* 隐藏滚动条（保留滚动能力）：避免内容高度变化时滑动条出现/消失造成突兀 */
 @utility no-scrollbar {
   scrollbar-width: none;

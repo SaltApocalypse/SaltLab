@@ -1,11 +1,12 @@
 export default {
   icons: {
     saltlab: 'SaltLab',
-    todo: '待办',
     past: '旧日',
     welcome: '欢迎',
     feedback: '交流、意见与反馈',
     games: '游戏',
+    settings: '设置',
+    music: '音乐',
   },
   windows: {
     welcome: '欢迎',
@@ -13,24 +14,26 @@ export default {
     projects: '项目',
     about: '关于',
     settings: '设置',
-    todo: '待办',
     past: '旧日',
     itg: 'Infinite Title Generator',
     games: '游戏',
     teririBlocks: '特日日方块',
-  },
-  dock: {
-    settings: '设置',
-    shutdown: '关机',
+    music: '音乐',
   },
   statusBar: {
-    localTime: '本地时间',
+    shutdown: '关闭页面',
+  },
+  miniCard: {
+    close: '关闭卡片',
   },
   context: {
     theme: '主题',
   },
   window: {
     close: '关闭窗口',
+    minimize: '最小化窗口',
+    maximize: '最大化窗口',
+    restore: '还原窗口',
     openExternal: '在新标签页打开',
   },
   content: {
@@ -47,10 +50,7 @@ export default {
         feedback: '联系我XD',
         saltlab: '各种实验性质项目',
         past: '原博客站点',
-        todo: '给自己看的待办',
       },
-      dockIntro: '另外，底部Dock栏：',
-      dockSettings: '就是设置',
     },
     labList: {
       itgTitle: 'Infinite Title Generator',
@@ -58,6 +58,25 @@ export default {
         'Infinite Title Generator 是一款受 Halo Infinite 启发制作的粉丝项目：在前端复刻游戏登录页标题动画效果。',
       itgOpen: '立即体验',
       itgOpenExternal: '在新标签页打开',
+    },
+    gamesList: {
+      teririBlocksIntro: '德丽莎版俄罗斯方块',
+      teririBlocksOpen: '立即游玩',
+      teririBlocksOpenExternal: '在新标签页打开',
+    },
+    music: {
+      previous: '上一首',
+      pause: '暂停',
+      play: '播放',
+      next: '下一首',
+      mute: '静音',
+      unmute: '取消静音',
+      seek: '播放进度',
+      noPreview: '暂无 Preview',
+      playbackError: '播放失败',
+      openAppleMusic: '在 Apple Music 打开',
+      preview: '试听',
+      volume: '音量',
     },
   },
   settings: {
