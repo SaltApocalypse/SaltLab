@@ -4,11 +4,11 @@ import {
   GamesContent,
   ItgContent,
   LabContent,
+  MusicContent,
   PastContent,
   ProjectsContent,
   SettingsContent,
   TeririBlocksContent,
-  TodoContent,
   WelcomeContent,
 } from './windowContents'
 
@@ -18,9 +18,9 @@ export const windowContents: Record<string, ComponentType> = {
   projects: ProjectsContent,
   about: AboutContent,
   settings: SettingsContent,
-  todo: TodoContent,
   past: PastContent,
   itg: ItgContent,
   games: GamesContent,
   teririBlocks: TeririBlocksContent,
+  music: MusicContent,
 }
