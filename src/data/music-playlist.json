@@ -1,0 +1,627 @@
+{
+  "name": "😊",
+  "description": "😊 — Apple Music 公开歌单（62 首，含 30s Preview）",
+  "appleMusicUrl": "https://music.apple.com/cn/playlist/pl.u-DdANr1qI0GB7BW",
+  "tracks": [
+    {
+      "id": "am-1744407387-1",
+      "title": "LosT",
+      "artist": "Bring Me the Horizon",
+      "album": "POST HUMAN: NeX GEn",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c2/64/38/c264386e-c6e6-c7e0-fefc-39beffa0e5ec/196872087246.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8a/03/0a/8a030af1-1d7c-2999-ea4b-c9325bec1cba/mzaf_18007958448023335503.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/lost/1744406677",
+      "durationMs": 205482
+    },
+    {
+      "id": "am-1295957316-2",
+      "title": "Done With Love (feat. Herizen)",
+      "artist": "Absofacto",
+      "album": "Thousand Peaces - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/13/1a/8c/131a8c4a-0210-42f8-972c-3d30582bd962/075679886729.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/07/be/7e/07be7e51-a2ac-2659-ad45-19a313bec66b/mzaf_14869541455050690224.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/done-with-love-feat-herizen/1295957247",
+      "durationMs": 216681
+    },
+    {
+      "id": "am-1309392974-3",
+      "title": "New Supplier",
+      "artist": "Airplane Man",
+      "album": "New Supplier - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/6e/c2/6d/6ec26dcb-c972-8098-c576-213c76ef73a5/air.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/1e/29/72/1e29726f-ff0e-a352-7ea3-c492ac682ac8/mzaf_14570988652961185142.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/new-supplier/1309392694",
+      "durationMs": 242432
+    },
+    {
+      "id": "am-1497608061-4",
+      "title": "Nice to Meet Ya",
+      "artist": "Niall Horan",
+      "album": "Heartbreak Weather",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e2/87/ad/e287ad34-3236-86bd-ccff-c50d1675425e/19UM1IM08786.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4a/99/01/4a990132-73d2-0fa9-9a72-6d90ecbe2263/mzaf_687259960000031684.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/nice-to-meet-ya/1497607470",
+      "durationMs": 158805
+    },
+    {
+      "id": "am-1295957306-5",
+      "title": "Dissolve",
+      "artist": "Absofacto",
+      "album": "Thousand Peaces - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/13/1a/8c/131a8c4a-0210-42f8-972c-3d30582bd962/075679886729.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fc/9b/fd/fc9bfd7f-7b27-9e51-fda6-dadd4c5f2d78/mzaf_6926716027657846061.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/dissolve/1295957247",
+      "durationMs": 224661
+    },
+    {
+      "id": "am-1652367317-6",
+      "title": "Dissolve (Extended)",
+      "artist": "Absofacto & NITESHIFT",
+      "album": "Dissolve - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ab/19/68/ab196855-402d-3f2b-42e6-35ad59515517/075679709974.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/33/14/d933140d-450b-5512-042d-968dd440790c/mzaf_10489408359729268751.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/dissolve-extended/1652367190",
+      "durationMs": 273684
+    },
+    {
+      "id": "am-1455616840-7",
+      "title": "Dissolve (Acoustic)",
+      "artist": "Absofacto",
+      "album": "Dissolve (Acoustic) - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/68/2e/e0/682ee07c-b17b-f31b-c9f1-3d9ecf01f771/075679850560.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6a/76/3d/6a763dd2-83c1-bf6c-7287-961b4260d4e2/mzaf_6068322554091350685.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/dissolve-acoustic/1455616839",
+      "durationMs": 168522
+    },
+    {
+      "id": "am-1240407257-8",
+      "title": "Endless Summer",
+      "artist": "Absofacto",
+      "album": "Endless Summer - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/64/9d/f9/649df967-d720-d575-daa3-973f953c9608/075679894519.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6f/98/22/6f98223f-8cd4-26a9-b0aa-db118d034c5e/mzaf_7628102789270538261.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/endless-summer/1240407251",
+      "durationMs": 205313
+    },
+    {
+      "id": "am-1263976354-9",
+      "title": "Color Green",
+      "artist": "New Politics",
+      "album": "Lost in Translation",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ab/0a/78/ab0a78d6-0ade-8ace-6526-7ecf59227b18/093624910466.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/72/d8/f2/72d8f254-22ae-4b45-80bf-aa3828eae26f/mzaf_10127072980206882945.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/color-green/1263976349",
+      "durationMs": 274253
+    },
+    {
+      "id": "am-715510130-10",
+      "title": "Don't Take My Sunshine Away",
+      "artist": "Sparklehorse",
+      "album": "Dreamt for Light Years In the Belly of a Mountain",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/86/df/36/86df36a5-0972-ee00-b3ef-d26aa6f06e75/00094637094655.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/03/2d/ea/032dea2b-569f-16a7-303f-4248d68f270f/mzaf_11171972750677017492.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/dont-take-my-sunshine-away/715510105",
+      "durationMs": 185733
+    },
+    {
+      "id": "am-1832855874-11",
+      "title": "Childhood Dreams",
+      "artist": "Seraphine & Jasmine Clarke",
+      "album": "Childhood Dreams - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/46/84/70/468470dd-b28c-1cfc-0b86-23fb07d3ab19/811395035764_Cover.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a4/c1/94/a4c1943d-92b9-fde4-e567-e1308c7d1d81/mzaf_2325047386830059908.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/childhood-dreams/1832855872",
+      "durationMs": 164262
+    },
+    {
+      "id": "am-1698424824-12",
+      "title": "Let It Bloom",
+      "artist": "Grabbitz",
+      "album": "Let Them Only See Butterflies",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/e8/7b/97e87ba5-5bee-a9fd-d2ad-5c8ebb67f59d/742779548603.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/21/9c/05/219c0560-7056-83bc-8b4d-c15fab0bd006/mzaf_4129703277332012093.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/let-it-bloom/1698424816",
+      "durationMs": 240000
+    },
+    {
+      "id": "am-1626986812-13",
+      "title": "Lullaby",
+      "artist": "Risso & BNJX",
+      "album": "Lullaby - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/d1/89/8e/d1898e39-4609-93fa-dd8d-1f0b50786eac/5021732017864.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/66/a3/ef/66a3ef62-1e4c-dfe9-cc77-60aa239009fb/mzaf_15830211154411187576.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/lullaby/1626986522",
+      "durationMs": 243953
+    },
+    {
+      "id": "am-1502298681-14",
+      "title": "Rescue Me",
+      "artist": "OneRepublic",
+      "album": "Human (Deluxe)",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/9f/5b/8b/9f5b8bcb-8edf-c065-b25d-3872b0d50d92/19UMGIM85967.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/31/d7/3231d7f5-7a94-6f33-5be7-043bd33a80ba/mzaf_8160567856128636185.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/rescue-me/1502298673",
+      "durationMs": 159650
+    },
+    {
+      "id": "am-1021582763-15",
+      "title": "Follow You",
+      "artist": "Bring Me the Horizon",
+      "album": "That's the Spirit",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/bb/dc/1d/bbdc1dda-00d3-f989-0599-543da601acaf/886445386097.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3c/75/d4/3c75d4b1-9e69-1a98-d8c3-0af6777bcb3e/mzaf_12705465796337213221.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/follow-you/1021582747",
+      "durationMs": 231107
+    },
+    {
+      "id": "am-1416870610-16",
+      "title": "Enough",
+      "artist": "Normandie",
+      "album": "White Flag",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/50/fd/5650fdd1-bc66-7d8b-af43-c0dfdbaec13e/192562795217.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/cd/07/84cd075b-ef92-8900-63d1-d3431523e101/mzaf_2222474734718279197.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/enough/1416870351",
+      "durationMs": 213000
+    },
+    {
+      "id": "am-1416870602-17",
+      "title": "Ecstasy",
+      "artist": "Normandie",
+      "album": "White Flag",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/50/fd/5650fdd1-bc66-7d8b-af43-c0dfdbaec13e/192562795217.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e5/d4/c2/e5d4c256-09ca-a0d1-dcb4-dd06383fbb46/mzaf_14873610700553679495.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/ecstasy/1416870351",
+      "durationMs": 178421
+    },
+    {
+      "id": "am-1416871471-18",
+      "title": "Moth",
+      "artist": "Normandie",
+      "album": "White Flag",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/50/fd/5650fdd1-bc66-7d8b-af43-c0dfdbaec13e/192562795217.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1c/22/e4/1c22e408-c930-6d7c-5a43-0b8f7f682e68/mzaf_16806893546399552801.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/moth/1416870351",
+      "durationMs": 218538
+    },
+    {
+      "id": "am-1455141072-19",
+      "title": "Torn",
+      "artist": "Neck Deep & Songs That Saved My Life",
+      "album": "Songs That Saved My Life",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/27/6f/36/276f3643-22f4-b169-e0a4-a32afb92da0f/31.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d2/62/ca/d262ca9d-04de-3446-ba28-2112559e0cc3/mzaf_10759675650034936034.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/torn/1455141071",
+      "durationMs": 244480
+    },
+    {
+      "id": "am-1574347370-20",
+      "title": "The Way You Look At Me",
+      "artist": "Chris James",
+      "album": "The Fear of Missing Out",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/59/d3/99/59d399f4-3ba4-b654-c831-3a54aa9d5dd1/4260647881516_cover.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/0c/7d/2f/0c7d2f09-ffee-bb3c-d956-15e854236b10/mzaf_7875534503128956562.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/the-way-you-look-at-me/1574347365",
+      "durationMs": 171094
+    },
+    {
+      "id": "am-1593348267-21",
+      "title": "Spark It Up",
+      "artist": "LEISURE",
+      "album": "Sunsetter",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/06/49/ff/0649ff9a-fc9f-23d9-efd3-38c4c578548e/067003128858.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6b/9c/4e/6b9c4e05-62bd-6401-7a24-5938c7ec8b3c/mzaf_5854790918776892768.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/spark-it-up/1593348262",
+      "durationMs": 271773
+    },
+    {
+      "id": "am-1498663192-22",
+      "title": "Fall",
+      "artist": "Neck Deep",
+      "album": "All Distortions Are Intentional",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/49/e4/ef/49e4ef70-9dff-0259-4fe2-cf63d795a99a/ADAI_COVER_3000px.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f4/e4/6e/f4e46e63-4254-60ad-e9be-e850b21a4116/mzaf_13158361297797462184.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/fall/1498663190",
+      "durationMs": 214923
+    },
+    {
+      "id": "am-1416872641-23",
+      "title": "Fever",
+      "artist": "Normandie",
+      "album": "White Flag",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/50/fd/5650fdd1-bc66-7d8b-af43-c0dfdbaec13e/192562795217.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/9b/3c/119b3c00-2b88-b631-27ce-f0de0956892a/mzaf_14690084350324401962.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/fever/1416870351",
+      "durationMs": 201094
+    },
+    {
+      "id": "am-903055962-24",
+      "title": "Superheroes",
+      "artist": "The Script",
+      "album": "No Sound Without Silence",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d3/3e/f2/d33ef26f-a350-aa1f-ee21-218f095c9014/886444765046.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/7b/8c/fd7b8c85-23d5-fd76-d070-6b1924740585/mzaf_18078638471347833435.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/superheroes/903055934",
+      "durationMs": 245467
+    },
+    {
+      "id": "am-1485075038-25",
+      "title": "F.I.N.E.",
+      "artist": "Too Close To Touch",
+      "album": "I'm Hard to Love, but so Are You, Vol. 2 - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/0e/f2/c3/0ef2c3ec-a5ed-42a5-8deb-8d61a074d210/0045778762033.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/73/30/92/733092a3-717d-39b7-d08b-62410fa8514f/mzaf_1427576774049320617.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/f-i-n-e/1485075037",
+      "durationMs": 223342
+    },
+    {
+      "id": "am-1021582767-26",
+      "title": "Drown (New)",
+      "artist": "Bring Me the Horizon",
+      "album": "That's the Spirit",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/bb/dc/1d/bbdc1dda-00d3-f989-0599-543da601acaf/886445386097.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/33/5b/44335bdc-c7c3-1b9b-de7d-b0560471f14e/mzaf_15771307564818628212.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/drown-new/1021582747",
+      "durationMs": 222093
+    },
+    {
+      "id": "am-1508734257-27",
+      "title": "Criminal",
+      "artist": "Led by Lanterns",
+      "album": "Criminal - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b2/de/7f/b2de7f39-3035-4cbc-cd8b-d8f1a13ed6c7/artwork.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/69/47/5a/69475aa3-9627-9a68-21b5-aef3a2da80d4/mzaf_3322014255231103073.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/criminal/1508734251",
+      "durationMs": 216006
+    },
+    {
+      "id": "am-1511968497-28",
+      "title": "Alone",
+      "artist": "Rentz",
+      "album": "Alone - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/6d/8e/7e/6d8e7e3f-dc1a-c0f8-a6ba-55702e5282a0/8720205191069.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c1/ba/69/c1ba69ff-b078-ba7c-f145-309e706e3e55/mzaf_11849185385634606359.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/alone/1511968496",
+      "durationMs": 225840
+    },
+    {
+      "id": "am-1722213256-29",
+      "title": "Novocaine",
+      "artist": "Salty Salt",
+      "album": "Phono Records Vol.3 Organic「夜」",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/12/ef/0c/12ef0c65-5165-4fab-51c6-19bc0f72bc60/4711508062877.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/16/b8/19/16b8198a-fb4b-c627-9ca9-896eb0b58621/mzaf_13999790507404969657.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/novocaine/1722213248",
+      "durationMs": 264742
+    },
+    {
+      "id": "am-1586068978-30",
+      "title": "Heaven",
+      "artist": "Solence",
+      "album": "Brothers",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cc/2c/5e/cc2c5ee6-c7e3-6c03-03e5-a1501868756e/0.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8c/8e/db/8c8edbd5-a366-0a58-1ec7-4a07777a3241/mzaf_15491436948664206802.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/heaven/1586068976",
+      "durationMs": 218275
+    },
+    {
+      "id": "am-1440914773-31",
+      "title": "'93",
+      "artist": "Youngr",
+      "album": "This Is Not an Album",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/94/53/ba/9453bad2-6500-df61-1094-9e7fa95a56cc/00602567337089.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/13/18/ba/1318baf9-0169-9ce6-6e53-53fd8d96dd16/mzaf_4026678856797587768.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/93/1440914483",
+      "durationMs": 209153
+    },
+    {
+      "id": "am-1442077501-32",
+      "title": "Social",
+      "artist": "Smallpools",
+      "album": "So Social - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/a0/06/59/a0065918-1853-8909-17f9-e272f6168749/5056167111252_1.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a6/e3/f4/a6e3f4f5-f247-d605-d0c9-49e91c954dcc/mzaf_2887052188670200901.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/social/1442077499",
+      "durationMs": 237391
+    },
+    {
+      "id": "am-877785728-33",
+      "title": "Paris",
+      "artist": "Magic Man",
+      "album": "Before the Waves",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/38/13/27/38132712-d6b1-f2d2-222e-58016944240e/886444617727.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a0/c5/a6/a0c5a6cb-183c-94d1-983c-89b5c6d7f806/mzaf_14228804553170274170.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/paris/877785720",
+      "durationMs": 232750
+    },
+    {
+      "id": "am-877785730-34",
+      "title": "Chicagoland",
+      "artist": "Magic Man",
+      "album": "Before the Waves",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/38/13/27/38132712-d6b1-f2d2-222e-58016944240e/886444617727.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5b/62/1e/5b621eb3-4176-fffb-ccf5-4218fd510687/mzaf_4353485783996410455.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/chicagoland/877785720",
+      "durationMs": 262722
+    },
+    {
+      "id": "am-1743303884-35",
+      "title": "blood to gold",
+      "artist": "slenderbodies",
+      "album": "fabulist: extended - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7d/28/0e/7d280e81-fc2e-f59e-cf7a-350835e71435/843357105185.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1b/9b/da/1b9bda2c-7ffa-3cf7-9589-33190b50c4d6/mzaf_2944468839554011171.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/blood-to-gold/1743303879",
+      "durationMs": 178197
+    },
+    {
+      "id": "am-1500242895-36",
+      "title": "Drama (feat. Big Data)",
+      "artist": "NoMBe",
+      "album": "They Might've Even Loved Me",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/64/41/a564415e-3007-71bd-2b37-001bf24c04f5/859725799092.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/52/4e/13/524e130c-9d3e-5b2c-3d8b-0d11591ec1ab/mzaf_1245133380031763868.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/drama-feat-big-data/1500242886",
+      "durationMs": 218387
+    },
+    {
+      "id": "am-1500242897-37",
+      "title": "Bad Girls",
+      "artist": "NoMBe",
+      "album": "They Might've Even Loved Me",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/64/41/a564415e-3007-71bd-2b37-001bf24c04f5/859725799092.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/af/98/35/af983520-bfef-e211-8f0b-cebd2e0b041a/mzaf_5332257982009477366.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/bad-girls/1500242886",
+      "durationMs": 204800
+    },
+    {
+      "id": "am-1500242900-38",
+      "title": "Sex",
+      "artist": "NoMBe",
+      "album": "They Might've Even Loved Me",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/64/41/a564415e-3007-71bd-2b37-001bf24c04f5/859725799092.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6b/87/5a/6b875ac0-b48a-fb56-0917-c1b4ad969901/mzaf_6670908399693339863.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/sex/1500242886",
+      "durationMs": 222227
+    },
+    {
+      "id": "am-1777931764-39",
+      "title": "Hurts Like Hell",
+      "artist": "Hands Like Houses & Normandie",
+      "album": "ATMOSPHERICS",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b8/7b/a5/b87ba51c-070f-0108-1360-48738f03d31d/198846820422.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/41/2d/95/412d957b-d10a-2c1b-7df7-daca41e4dbb1/mzaf_12790428063271674279.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/hurts-like-hell/1777931660",
+      "durationMs": 221258
+    },
+    {
+      "id": "am-1710675951-40",
+      "title": "Happier",
+      "artist": "YUNGBLUD, Oli Sykes & Bring Me the Horizon",
+      "album": "Happier - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b8/6c/c0/b86cc061-db88-316c-093e-711da71e13c4/23UM1IM18077.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/32/48/de3248cc-8065-c921-82b0-1f38d4628045/mzaf_139338938457929060.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/happier/1710675949",
+      "durationMs": 204459
+    },
+    {
+      "id": "am-1416870609-41",
+      "title": "White Flag",
+      "artist": "Normandie",
+      "album": "White Flag",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/50/fd/5650fdd1-bc66-7d8b-af43-c0dfdbaec13e/192562795217.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/85/6e/60/856e60b8-7f1d-54cc-6610-7fd65624b886/mzaf_6846986302183919950.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/white-flag/1416870351",
+      "durationMs": 225732
+    },
+    {
+      "id": "am-1640350571-42",
+      "title": "Violet City",
+      "artist": "Mansionair",
+      "album": "Shadowboxer",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/76/c6/cb/76c6cb33-7ad5-2eaf-8135-d7457b4a1b82/5056167112051.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/29/48/bb/2948bb09-454d-8954-904a-aa4647c92427/mzaf_7708474280658860094.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/violet-city/1640350137",
+      "durationMs": 213516
+    },
+    {
+      "id": "am-1744407121-43",
+      "title": "DArkSide",
+      "artist": "Bring Me the Horizon",
+      "album": "POST HUMAN: NeX GEn",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c2/64/38/c264386e-c6e6-c7e0-fefc-39beffa0e5ec/196872087246.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6f/c4/be/6fc4bee6-fd95-dfa0-ae50-b5a667bdff1d/mzaf_13245383433557886290.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/darkside/1744406677",
+      "durationMs": 165357
+    },
+    {
+      "id": "am-1247003780-44",
+      "title": "Harden the Paint",
+      "artist": "Foster the People",
+      "album": "Sacred Hearts Club",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/25/ed/54/25ed54be-1420-08c2-680b-844629b83601/886446550565.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cd/d0/3e/cdd03e2b-2150-8a19-9b89-cd4a783336a8/mzaf_8019412228746294071.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/harden-the-paint/1247002400",
+      "durationMs": 234547
+    },
+    {
+      "id": "am-1021582761-45",
+      "title": "Throne",
+      "artist": "Bring Me the Horizon",
+      "album": "That's the Spirit",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/bb/dc/1d/bbdc1dda-00d3-f989-0599-543da601acaf/886445386097.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/1a/93/b81a9364-2618-9a33-a11f-540633aeb324/mzaf_11704309218642801852.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/throne/1021582747",
+      "durationMs": 191520
+    },
+    {
+      "id": "am-1478004041-46",
+      "title": "Before U Go (feat. Lauren Marie)",
+      "artist": "Tyzo Bloom",
+      "album": "You Drive Me Crazy, Don't Leave",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/b9/ae/be/b9aebe65-5b02-9600-3e20-a7c298bb6964/19UMGIM77318.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6c/b7/a2/6cb7a2fb-13e4-092d-8edc-d5bcf657339b/mzaf_10361591251025205750.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/before-u-go-feat-lauren-marie/1478003731",
+      "durationMs": 231720
+    },
+    {
+      "id": "am-1468018207-47",
+      "title": "Restless",
+      "artist": "Moon Taxi",
+      "album": "Restless - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/52/0f/4f/520f4f2d-b941-fe57-83de-1f173bd5f904/886447762981.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/50/19/a0/5019a08a-f3f2-3652-6550-4bf4e727d0ff/mzaf_13490129805480197835.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/restless/1468018206",
+      "durationMs": 195031
+    },
+    {
+      "id": "am-1500242903-48",
+      "title": "Milk & Coffee",
+      "artist": "NoMBe",
+      "album": "They Might've Even Loved Me",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/64/41/a564415e-3007-71bd-2b37-001bf24c04f5/859725799092.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/38/72/aa387292-d2a1-2bae-2388-7ea52146ce80/mzaf_2707901248651204523.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/milk-coffee/1500242886",
+      "durationMs": 235653
+    },
+    {
+      "id": "am-1439240076-49",
+      "title": "mother tongue",
+      "artist": "Bring Me the Horizon",
+      "album": "amo",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/35/c2/1d/35c21dea-2661-4d17-a1ed-c42e62125b86/886447279588.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c6/d8/5d/c6d85d1d-8f66-3f79-4363-ebc56e5945e7/mzaf_13184607895682195424.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/mother-tongue/1439239477",
+      "durationMs": 217425
+    },
+    {
+      "id": "am-1455673648-50",
+      "title": "Rad Drugz",
+      "artist": "MISSIO",
+      "album": "The Darker the Weather // The Better the Man",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/58/22/df/5822dfa8-d9a9-36ce-492b-fb7db6c8a622/886447474365.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/72/98/2a/72982a5c-2846-96ab-7bee-0a518816e4b7/mzaf_3745468797962562071.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/rad-drugz/1455673426",
+      "durationMs": 228387
+    },
+    {
+      "id": "am-1443129724-51",
+      "title": "Swim",
+      "artist": "Dan Croll",
+      "album": "Emerging Adulthood",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/b9/2a/70/b92a7095-2ecf-5e47-a248-6e18acd2fecc/05060496180711.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/69/fa/8569faf0-cd95-201e-4ab9-ede417257443/mzaf_8582323060878077755.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/swim/1443129212",
+      "durationMs": 198013
+    },
+    {
+      "id": "am-1532717465-52",
+      "title": "Dirty",
+      "artist": "grandson",
+      "album": "Death Of An Optimist",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/69/27/bb/6927bb87-132d-9813-8e33-270fd34e34dc/075679800961.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/a8/64/c2a864d9-77e0-2322-3749-636b0ee03c9c/mzaf_12549832145339002820.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/dirty/1532717460",
+      "durationMs": 208296
+    },
+    {
+      "id": "am-1770224265-53",
+      "title": "Horizon Dreamer",
+      "artist": "三浦大知",
+      "album": "Horizon Dreamer - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/da/f5/cfdaf51b-c0d1-bb7c-8508-a1a7c078cbb1/ANTCD-A0000014569.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/07/92/7c/07927c5d-c665-56a5-f202-440814ad5083/mzaf_14811259858129596314.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/horizon-dreamer/1770224261",
+      "durationMs": 217900
+    },
+    {
+      "id": "am-1838538064-54",
+      "title": "Indigo",
+      "artist": "Magnolian",
+      "album": "Death Stranding 2 (Songs from the Video Game)",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/50/af/6950af51-ddbb-3f96-485f-cd4203e33533/196873366203.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/36/5a/4c365a18-3ed3-3168-a7bb-74dd04dd3518/mzaf_327091646441087248.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/indigo/1838538062",
+      "durationMs": 279066
+    },
+    {
+      "id": "am-795063679-55",
+      "title": "Perfect",
+      "artist": "Blitz Kids",
+      "album": "The Good Youth",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e4/29/cf/e429cf4e-1173-29d3-f71c-3a0f7781a874/886444427432.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9e/d2/24/9ed224bc-9a61-844f-a0a7-e7289f314437/mzaf_4068107660172187161.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/perfect/795063317",
+      "durationMs": 219111
+    },
+    {
+      "id": "am-1500242889-56",
+      "title": "Eden (feat. Geneva White)",
+      "artist": "NoMBe",
+      "album": "They Might've Even Loved Me",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/64/41/a564415e-3007-71bd-2b37-001bf24c04f5/859725799092.png/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/99/29/48992957-bb1c-ba15-491c-e4d048af105f/mzaf_11424526505761905331.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/eden-feat-geneva-white/1500242886",
+      "durationMs": 242453
+    },
+    {
+      "id": "am-447276393-57",
+      "title": "Raindrops Keep Falling on my Head",
+      "artist": "B.J. Thomas",
+      "album": "The Very Best of B.J. Thomas",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/0a/bf/4f/0abf4f67-edd5-d41d-6f3b-439962a10577/885686951255.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/f0/c8/12f0c8d3-896b-6871-350c-aef425d3b7d2/mzaf_15544603796557652807.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/raindrops-keep-falling-on-my-head/447276319",
+      "durationMs": 176112
+    },
+    {
+      "id": "am-1817182086-58",
+      "title": "INERTIA (feat. Rei)",
+      "artist": "SawanoHiroyuki[nZk]",
+      "album": "INERTIA - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/33/9a/aa339aab-8f47-1963-2541-163335b8fe1c/4547366755794.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/e2/86/32e286dc-48c1-2325-5bca-412c4db1abfb/mzaf_17910401048198854640.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/inertia-feat-rei/1817182085",
+      "durationMs": 199487
+    },
+    {
+      "id": "am-1034004852-59",
+      "title": "Color",
+      "artist": "Finish Ticket",
+      "album": "When Night Becomes Day - EP",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/af/11/25/af1125e1-622f-c392-8afe-7666d5c7767f/mzm.akgmvcew.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/3b/d2/403bd2c4-b6bf-1d4a-8a45-f4540943dae9/mzaf_3885259155022271024.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/color/1034004849",
+      "durationMs": 250102
+    },
+    {
+      "id": "am-1071753633-60",
+      "title": "美人鱼",
+      "artist": "林俊杰",
+      "album": "第二天堂(江南)",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music49/v4/9b/98/eb/9b98ebae-69b1-8009-678c-65e94124e0a8/dj.cqtiyqmo.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/66/7b/01667b76-f3da-9081-3d23-5b040c5718ca/mzaf_14375768501256122686.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/%E7%BE%8E%E4%BA%BA%E9%B1%BC/1071753622",
+      "durationMs": 252056
+    },
+    {
+      "id": "am-1071752114-61",
+      "title": "不潮不用花钱",
+      "artist": "林俊杰",
+      "album": "JJ陆",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/99/e8/4f/99e84f72-3c26-0617-86a7-8e3f250f8c98/fengmain.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/06/fb/a4/06fba4f5-b6b0-e7b0-88fa-c6bfe4999e18/mzaf_16168268668037608209.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/%E4%B8%8D%E6%BD%AE%E4%B8%8D%E7%94%A8%E8%8A%B1%E9%92%B1/1071752047",
+      "durationMs": 230448
+    },
+    {
+      "id": "am-965285262-62",
+      "title": "Move",
+      "artist": "Axero & Itro",
+      "album": "Move - Single",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/62/55/bf/6255bfd6-1ddc-980c-0e41-9db305c444bf/5054316321095_cover.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/84/16/7a/84167a50-5358-7193-b0de-ee5ed9dd1dc8/mzaf_8509582387917639187.plus.aac.p.m4a",
+      "appleMusicUrl": "https://music.apple.com/cn/album/move/965285260",
+      "durationMs": 303750
+    }
+  ]
+}

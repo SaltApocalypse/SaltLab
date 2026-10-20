@@ -8,6 +8,7 @@
     "generate": "tsr generate",
     "build": "pnpm generate && tsc -b && vite build",
     "lint": "oxlint",
+    "music:update": "node scripts/update-music-playlist.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
