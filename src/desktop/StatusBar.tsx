@@ -1,42 +1,86 @@
-import { useEffect, useState } from 'react'
+import { Power, Settings } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { getCurrentLang } from '../i18n'
+import { LOGO_URL } from '../config/cdn'
+import { useClock } from '../hooks/useClock'
+import { BrandTitle } from './BrandTitle'
+import { useDesktopStore } from './desktopStore'
+import { STATUS_BAR_HEIGHT } from './grid'
+
+const pad = (n: number) => String(n).padStart(2, '0')
 
 /**
- * StatusBar —— 桌面四周边界装饰框 + 状态栏雏形
+ * StatusBar —— 项目专属顶部状态栏（高 40px）
  *
- * 目前仅做两件事：
- *  - 沿四边渲染一圈粗描边框作为装饰（后续扩展为真正的状态栏）
- *  - 顶部线框特意下移（牺牲一点垂直桌面空间），状态数据（本地时间）放在线框上方的留白处
- * 不拦截交互（pointer-events-none），位于背景之上、桌面内容（图标/窗体）之下。
+ * 左：logo（hover 渐变为 power 图标，点击关闭当前页面）+ 站点标题
+ * 右：settings 图标 + 日期时间（默认 MM/DD HH:mm 24 小时制，hover 渐变展开为 YYYY/MM/DD hh:mm AM/PM）
+ * 容器不拦截交互（pointer-events-none），仅交互元素自身开启（pointer-events-auto）。
  */
 export function StatusBar() {
   const { t } = useTranslation()
-  const [now, setNow] = useState(() => new Date())
+  const now = useClock()
+  const openWindow = useDesktopStore((state) => state.openWindow)
 
-  useEffect(() => {
-    const timer = setInterval(() => setNow(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const time = now.toLocaleTimeString(localeOf(getCurrentLang()), { hour: '2-digit', minute: '2-digit' })
-  const date = now.toLocaleDateString(localeOf(getCurrentLang()), { month: 'long', day: 'numeric' })
+  const mm = pad(now.getMonth() + 1)
+  const dd = pad(now.getDate())
+  const yyyy = now.getFullYear()
+  const h24 = pad(now.getHours())
+  const min = pad(now.getMinutes())
+  const h12 = pad(now.getHours() % 12 || 12)
+  const ampm = now.getHours() < 12 ? 'AM' : 'PM'
+  const compact = `${mm}/${dd} ${h24}:${min}`
+  const expanded = `${yyyy}/${mm}/${dd} ${h12}:${min} ${ampm}`
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-0">
-      {/* 四周边界装饰框：粗描边，顶部线框下移留白 */}
-      <div className="absolute bottom-2 left-2 right-2 top-8 border-2 border-primary/30" />
-      {/* 状态栏右上角：本地日期 + 时间（位于线框上方，与线框留足间隙） */}
-      <div className="absolute right-4 top-1.5 flex items-baseline gap-2">
-        <span className="text-xs text-base-content/50">{t('statusBar.localTime')}</span>
-        <span className="text-sm font-mono tabular-nums text-base-content/80">{date}</span>
-        <span className="text-lg font-mono tabular-nums text-primary">{time}</span>
+    <div
+      className="pointer-events-none fixed inset-x-0 top-0 z-40 border-b border-base-content/10 bg-base-100/30 backdrop-blur-sm motion-safe:animate-status-in"
+      style={{ height: STATUS_BAR_HEIGHT }}
+    >
+      <div className="flex h-full items-center justify-between px-4">
+        {/* 左：logo（hover → power，点击关闭页面）+ 标题 */}
+        <div className="pointer-events-auto flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => window.close()}
+            aria-label={t('statusBar.shutdown')}
+            className="group/logo relative block h-6 w-6 cursor-pointer"
+          >
+            <img
+              src={LOGO_URL}
+              alt=""
+              className="h-6 w-6 object-contain transition-opacity duration-300 group-hover/logo:opacity-0"
+            />
+            <Power
+              size={22}
+              className="absolute inset-0 m-auto text-primary opacity-0 transition-opacity duration-300 group-hover/logo:opacity-100"
+            />
+          </button>
+          <BrandTitle />
+        </div>
+
+        {/* 右：settings 图标 + 日期（hover 渐变展开） */}
+        <div className="pointer-events-auto flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => openWindow('settings', t('windows.settings'))}
+            aria-label={t('icons.settings')}
+            className="flex h-6 w-6 items-center justify-center text-base-content/70 transition-colors duration-300 hover:text-primary"
+          >
+            <Settings size={16} />
+          </button>
+          {/* 宽度由展开格式（最长）预先撑开，hover 仅做透明度切换，不重排 */}
+          <div className="group/date relative text-xs tabular-nums text-base-content/70">
+            <span className="invisible" aria-hidden="true">
+              {expanded}
+            </span>
+            <span className="absolute inset-0 flex items-center justify-center whitespace-nowrap transition-opacity duration-300 group-hover/date:opacity-0">
+              {compact}
+            </span>
+            <span className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover/date:opacity-100">
+              {expanded}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )
-}
-
-/** 应用语言 → toLocale* 区域标识（日期/时间随界面语言切换） */
-function localeOf(lang: ReturnType<typeof getCurrentLang>): string {
-  return lang === 'zh' ? 'zh-CN' : 'en-US'
 }

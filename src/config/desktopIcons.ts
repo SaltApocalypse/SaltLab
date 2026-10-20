@@ -1,4 +1,4 @@
-import { FaceGrinning, FlaskConical, FolderArchive, Gamepad2, ListTodo, MessageSquareHeart } from 'lucide-react'
+import { FaceGrinning, FlaskConical, FolderArchive, Gamepad2, MessageSquareHeart, Music, Settings } from 'lucide-react'
 import { gridCell } from '../desktop/grid'
 import type { DesktopIconData } from '../desktop/types'
 
@@ -18,6 +18,22 @@ export const desktopIcons: DesktopIconData[] = [
     type: 'url',
     target: 'https://github.com/SaltApocalypse/SaltLab/issues/new',
     position: gridCell(1, 0),
+  },
+  {
+    id: 'settings',
+    titleKey: 'icons.settings',
+    icon: Settings,
+    type: 'window',
+    target: 'settings',
+    position: gridCell(2, 0),
+  },
+  {
+    id: 'music',
+    titleKey: 'icons.music',
+    icon: Music,
+    type: 'window',
+    target: 'music',
+    position: gridCell(3, 0),
   },
   {
     id: 'lab',
@@ -42,13 +58,5 @@ export const desktopIcons: DesktopIconData[] = [
     type: 'window',
     target: 'past',
     position: gridCell(2, 1),
-  },
-  {
-    id: 'todo',
-    titleKey: 'icons.todo',
-    icon: ListTodo,
-    type: 'window',
-    target: 'todo',
-    position: gridCell(0, 2),
   },
 ]

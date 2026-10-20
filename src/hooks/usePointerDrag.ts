@@ -6,9 +6,11 @@ interface PointerDragOptions {
   onStart?: (event: ReactPointerEvent<Element>) => void
   onMove?: (event: ReactPointerEvent<Element>, delta: Position) => void
   onEnd?: (event: ReactPointerEvent<Element>, delta: Position) => void
+  /** 指针取消（非正常结束）时回调，用于复位交互状态 */
+  onCancel?: () => void
 }
 
-export function usePointerDrag({ onStart, onMove, onEnd }: PointerDragOptions) {
+export function usePointerDrag({ onStart, onMove, onEnd, onCancel }: PointerDragOptions) {
   const startRef = useRef<{ x: number; y: number } | null>(null)
 
   const handlePointerDown = useCallback(
@@ -42,7 +44,8 @@ export function usePointerDrag({ onStart, onMove, onEnd }: PointerDragOptions) {
 
   const handlePointerCancel = useCallback(() => {
     startRef.current = null
-  }, [])
+    onCancel?.()
+  }, [onCancel])
 
   return {
     onPointerDown: handlePointerDown,

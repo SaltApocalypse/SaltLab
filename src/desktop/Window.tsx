@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import { ExternalLink, X } from 'lucide-react'
+import { memo, useRef, useState } from 'react'
+import { Copy, ExternalLink, Minus, Square, X } from 'lucide-react'
 import type { ComponentType, ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { windowExternalUrls } from '../config/windowExternalUrls'
@@ -8,13 +8,13 @@ import { useTheme } from '../theme/ThemeProvider'
 import type { LightButtonProps, PanelProps } from '../theme/themes'
 import { usePointerDrag } from '../hooks/usePointerDrag'
 import { useDesktopBounds } from './desktopContext'
-import { useDesktopStore } from './desktopStore'
+import { MIN_WINDOW_SIZE, useDesktopStore } from './desktopStore'
 import type { WindowState } from './desktopStore'
 import { clampToBounds } from './grid'
-import type { Size } from './types'
+import type { Position, Size } from './types'
 
-/** 窗体最小尺寸（缩放下限） */
-const MIN_WINDOW_SIZE: Size = { width: 280, height: 200 }
+/** 拖拽还原阈值：最大化窗口拖动超过该像素距离才恢复原大小（避免与双击冲突） */
+const DRAG_RESTORE_THRESHOLD = 6
 
 interface WindowProps {
   window: WindowState
@@ -29,7 +29,7 @@ interface WindowProps {
  *  - 内容区：flex 填充剩余空间，带最低高度（min-h-40），超出滚动
  * 交互：标题栏可拖拽移动窗口，点击窗口聚焦（zIndex 提升）
  */
-export function Window({ window: win, children }: WindowProps) {
+export const Window = memo(function Window({ window: win, children }: WindowProps) {
   const { t } = useTranslation()
   const { theme } = useTheme()
   // Panel / LightButton 跨主题契约：fill/tape/tilt 与 size 由共享 Props 提供（各主题包按需实现）
@@ -40,6 +40,9 @@ export function Window({ window: win, children }: WindowProps) {
   const activeWindowId = useDesktopStore((state) => state.activeWindowId)
   const focusWindow = useDesktopStore((state) => state.focusWindow)
   const closeWindow = useDesktopStore((state) => state.closeWindow)
+  const minimizeWindow = useDesktopStore((state) => state.minimizeWindow)
+  const toggleMaximize = useDesktopStore((state) => state.toggleMaximize)
+  const unmaximizeWindow = useDesktopStore((state) => state.unmaximizeWindow)
   const moveWindow = useDesktopStore((state) => state.moveWindow)
   const resizeWindow = useDesktopStore((state) => state.resizeWindow)
   const windowMaskMode = useDesktopStore((state) => state.windowMaskMode)
@@ -54,16 +57,68 @@ export function Window({ window: win, children }: WindowProps) {
     height: Math.min(win.size.height, Math.max(200, bounds.height - 16)),
   }
 
+  // 拖拽/缩放期间关闭几何过渡，避免窗口“拖影”（最大化/还原时才做平滑过渡）
+  const [interacting, setInteracting] = useState(false)
+
+  // 拖拽：最大化窗口在移动超过阈值后恢复原大小，并让窗口跟随光标（同 Windows 拖拽还原）
+  const dragSizeRef = useRef<Size>(size)
+  const pendingRestoreRef = useRef(false)
+  const maxGeometryRef = useRef<{ position: Position; size: Size; restoreSize: Size } | null>(null)
+
   const dragHandlers = usePointerDrag({
     onStart: () => {
       focusWindow(win.id)
+      setInteracting(true)
       originRef.current = win.position
+      dragSizeRef.current = size
+      pendingRestoreRef.current = win.maximized
+      maxGeometryRef.current = win.maximized
+        ? {
+            position: win.position,
+            size: win.size,
+            restoreSize: (win.restoreBounds ?? { size: win.size }).size,
+          }
+        : null
     },
-    onMove: (_event, delta) => {
+    onMove: (event, delta) => {
+      if (pendingRestoreRef.current) {
+        // 未超过阈值视为点击（保留双击最大化/还原）
+        if (Math.abs(delta.x) + Math.abs(delta.y) < DRAG_RESTORE_THRESHOLD) return
+        const geo = maxGeometryRef.current
+        pendingRestoreRef.current = false
+        if (geo && geo.size.width > 0) {
+          // 光标在最大化窗口内的相对横向位置 → 还原后保持该相对位置
+          const fracX = (event.clientX - geo.position.x) / geo.size.width
+          const offsetY = event.clientY - geo.position.y
+          const restoredPos = {
+            x: event.clientX - fracX * geo.restoreSize.width,
+            y: event.clientY - offsetY,
+          }
+          dragSizeRef.current = geo.restoreSize
+          originRef.current = { x: restoredPos.x - delta.x, y: restoredPos.y - delta.y }
+          unmaximizeWindow(win.id, restoredPos)
+          return
+        }
+      }
       moveWindow(
         win.id,
-        clampToBounds(originRef.current.x + delta.x, originRef.current.y + delta.y, bounds, size),
+        clampToBounds(
+          originRef.current.x + delta.x,
+          originRef.current.y + delta.y,
+          bounds,
+          dragSizeRef.current,
+        ),
       )
+    },
+    onEnd: () => {
+      pendingRestoreRef.current = false
+      maxGeometryRef.current = null
+      setInteracting(false)
+    },
+    onCancel: () => {
+      pendingRestoreRef.current = false
+      maxGeometryRef.current = null
+      setInteracting(false)
     },
   })
 
@@ -72,8 +127,11 @@ export function Window({ window: win, children }: WindowProps) {
   const resizeHandlers = usePointerDrag({
     onStart: () => {
       focusWindow(win.id)
+      setInteracting(true)
       sizeRef.current = win.size
     },
+    onEnd: () => setInteracting(false),
+    onCancel: () => setInteracting(false),
     onMove: (_event, delta) => {
       const width = Math.min(
         Math.max(MIN_WINDOW_SIZE.width, sizeRef.current.width + delta.x),
@@ -93,7 +151,15 @@ export function Window({ window: win, children }: WindowProps) {
 
   return (
     <div
-      className="absolute"
+      // 最小化：保留挂载、仅 display:none 隐藏（iframe / 组件 state 不丢失，恢复不重载）
+      // 打开时轻微缩放淡入；最大化/还原做几何过渡（拖拽/缩放期间关闭过渡，避免拖影）
+      className={`absolute motion-safe:animate-window-in ${
+        win.minimized ? 'hidden' : ''
+      } ${
+        interacting
+          ? ''
+          : 'motion-safe:transition-[left,top,width,height] motion-safe:duration-200 motion-safe:ease-out'
+      }`}
       style={{
         left: win.position.x,
         top: win.position.y,
@@ -109,16 +175,17 @@ export function Window({ window: win, children }: WindowProps) {
         tilt={false}
         className={`relative flex h-full flex-col ${masked ? 'bg-base-200!' : ''}`}
       >
-        {/* 顶部栏：左侧图标 + 标题，右侧关闭按钮 */}
+        {/* 顶部栏：左侧图标 + 标题，右侧窗口控制按钮（最小化 / 最大化还原 / 关闭） */}
         <div
           className="flex cursor-move touch-none select-none items-center justify-between gap-2"
           {...dragHandlers}
+          onDoubleClick={() => toggleMaximize(win.id, bounds)}
         >
           <span className="flex min-w-0 items-center gap-2">
             {TitleIcon && <TitleIcon size={14} className="shrink-0" />}
             <span className="truncate text-sm font-medium">{title}</span>
           </span>
-          {/* 右侧操作栏：外部网站入口 + 关闭 */}
+          {/* 右侧操作栏：外部网站入口 + 最小化 + 最大化/还原 + 关闭 */}
           <span className="flex shrink-0 items-center gap-1">
             {externalUrl && (
               <CloseButton
@@ -131,6 +198,24 @@ export function Window({ window: win, children }: WindowProps) {
                 <ExternalLink size={14} />
               </CloseButton>
             )}
+            <CloseButton
+              size="xs"
+              className="justify-center px-2"
+              aria-label={t('window.minimize')}
+              onPointerDown={(event) => event.stopPropagation()}
+              onClick={() => minimizeWindow(win.id)}
+            >
+              <Minus size={14} />
+            </CloseButton>
+            <CloseButton
+              size="xs"
+              className="justify-center px-2"
+              aria-label={t(win.maximized ? 'window.restore' : 'window.maximize')}
+              onPointerDown={(event) => event.stopPropagation()}
+              onClick={() => toggleMaximize(win.id, bounds)}
+            >
+              {win.maximized ? <Copy size={14} /> : <Square size={14} />}
+            </CloseButton>
             <CloseButton
               size="xs"
               className="justify-center px-2"
@@ -148,17 +233,19 @@ export function Window({ window: win, children }: WindowProps) {
         <div className="my-3 h-px w-full bg-base-300" />
         <div className="no-scrollbar min-h-40 min-w-0 flex-1 overflow-auto pr-2">{children}</div>
       </Panel>
-      {/* 右下角缩放手柄：斜纹装饰提示可拖拽缩放。
+      {/* 右下角缩放手柄：斜纹装饰提示可拖拽缩放（最大化时隐藏）。
           置于窗口根节点（被缩放的本体）而非主题 Panel 内部，避免依赖主题 fill 结构导致的手柄错位/垂直失效 */}
-      <span
-        className="absolute bottom-0 right-0 z-10 flex h-6 w-6 cursor-nwse-resize touch-none select-none items-end justify-end p-1.5"
-        {...resizeHandlers}
-      >
-        <svg viewBox="0 0 10 10" className="h-2.5 w-2.5" fill="none" aria-hidden="true">
-          <path d="M10 0v10H0" stroke="currentColor" strokeWidth="1.4" opacity="0.6" className="text-base-content/60" />
-          <path d="M10 5v5H5" stroke="currentColor" strokeWidth="1.4" opacity="0.35" className="text-base-content/35" />
-        </svg>
-      </span>
+      {!win.maximized && (
+        <span
+          className="absolute bottom-0 right-0 z-10 flex h-6 w-6 cursor-nwse-resize touch-none select-none items-end justify-end p-1.5"
+          {...resizeHandlers}
+        >
+          <svg viewBox="0 0 10 10" className="h-2.5 w-2.5" fill="none" aria-hidden="true">
+            <path d="M10 0v10H0" stroke="currentColor" strokeWidth="1.4" opacity="0.6" className="text-base-content/60" />
+            <path d="M10 5v5H5" stroke="currentColor" strokeWidth="1.4" opacity="0.35" className="text-base-content/35" />
+          </svg>
+        </span>
+      )}
     </div>
   )
-}
+})

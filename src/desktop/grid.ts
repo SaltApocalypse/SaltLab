@@ -2,10 +2,13 @@ import type { Bounds, Position, Size } from './types'
 
 export const ICON_SLOT = 116
 export const DESKTOP_PADDING = 24
-/** 顶部留白：与顶部线框（top-8）的间距，参照最左侧图标距左边框的间隙（24 - 8 = 16px），故 32 + 16 = 48 */
-export const DESKTOP_TOP_PADDING = 48
 export const ICON_WIDTH = 88
 export const ICON_HEIGHT = 96
+
+/** 顶部状态栏高度（与 StatusBar 组件保持一致） */
+export const STATUS_BAR_HEIGHT = 40
+/** 顶部留白：状态栏高度 + 与状态栏的间距（与左右留白 DESKTOP_PADDING 一致） */
+export const DESKTOP_TOP_PADDING = STATUS_BAR_HEIGHT + DESKTOP_PADDING
 
 export interface GridCell {
   col: number
@@ -25,7 +28,7 @@ export function gridSize(bounds: Bounds): { cols: number; rows: number } {
     cols: Math.max(1, Math.floor((bounds.width - DESKTOP_PADDING * 2) / ICON_SLOT)),
     rows: Math.max(
       1,
-      Math.floor((bounds.height - DESKTOP_PADDING - DESKTOP_TOP_PADDING) / ICON_SLOT),
+      Math.floor((bounds.height - DESKTOP_TOP_PADDING - DESKTOP_PADDING) / ICON_SLOT),
     ),
   }
 }
@@ -78,6 +81,49 @@ export function nearestFreeCell(from: GridCell, occupied: Set<string>, bounds: B
     }
   }
   return from
+}
+
+/**
+ * 从 from 起按「行优先」向后查找第一个空闲单元（逐行：先右后下）。
+ *
+ * 与 nearestFreeCell 的区别：行数不足时向下扩展、绝不回退到已占用单元，
+ * 用于 fitIcons 的自动重排——窄屏折行时保持图标的阅读顺序且不会重叠。
+ */
+export function firstFreeCell(from: GridCell, occupied: Set<string>, cols: number): GridCell {
+  let col = from.col
+  let row = from.row
+  // 占用单元有限：最多扫描 occupied.size + 1 行必能遇到空闲单元
+  const maxRow = from.row + occupied.size + 1
+  while (row <= maxRow) {
+    if (col >= cols) {
+      col = 0
+      row += 1
+      continue
+    }
+    const cell = { col, row }
+    if (!occupied.has(cellKey(cell))) return cell
+    col += 1
+  }
+  return from
+}
+
+/**
+ * 依据当前网格把一组「逻辑位置」映射为无重叠的显示位置（纯函数，不修改传入位置）。
+ *
+ * 窄屏时折行补位，宽屏恢复时自动回到原布局 —— 避免像旧 fitIcons 那样把压缩结果写回，
+ * 导致打开控制台改变视口后布局被永久打乱。
+ */
+export function layoutIconPositions(positions: Position[], bounds: Bounds): Position[] {
+  const { cols } = gridSize(bounds)
+  const occupied = new Set<string>()
+  return positions.map((position) => {
+    const target = cellOf(position.x, position.y, bounds)
+    const cell = occupied.has(cellKey(target))
+      ? firstFreeCell(target, occupied, cols)
+      : target
+    occupied.add(cellKey(cell))
+    return positionOf(cell)
+  })
 }
 
 export function clampToBounds(x: number, y: number, bounds: Bounds, size: Size): Position {

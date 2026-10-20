@@ -14,7 +14,7 @@ export interface DropdownOption {
 
 /**
  * SaltLab 使用的 Panel 跨主题契约。
- * 各主题包的 Panel 通过该契约提供窗体/ Dock 所需的可选布局 props（fill/tape/tilt 等）。
+ * 各主题包的 Panel 通过该契约提供窗体所需的可选布局 props（fill/tape/tilt 等）。
  */
 export interface PanelProps {
   children?: ReactNode
