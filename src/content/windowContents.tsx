@@ -99,25 +99,32 @@ export function AboutContent() {
 export function WelcomeContent() {
   const { t } = useTranslation()
   return (
-    <div className="space-y-4 text-sm">
-      <p className="text-base-content/70">{t('content.welcome.intro')}</p>
-      <ul className="list-disc space-y-1 pl-5 text-base-content/70">
-        <li>
-          <b className="text-base-content">{t('icons.feedback')}</b>
-          {'：'}
-          {t('content.welcome.desktop.feedback')}
-        </li>
+    <div className="space-y-3 text-sm">
+      <p className="text-base-content">{t('content.welcome.intro')}</p>
+      <p className="leading-relaxed text-base-content/70">{t('content.welcome.body')}</p>
+      <ul className="space-y-1.5 text-base-content/70">
         <li>
           <b className="text-base-content">{t('icons.saltlab')}</b>
           {'：'}
-          {t('content.welcome.desktop.saltlab')}
+          {t('content.welcome.highlights.projects')}
         </li>
         <li>
-          <b className="text-base-content">{t('windows.past')}</b>
+          <b className="text-base-content">{t('icons.games')}</b>
           {'：'}
-          {t('content.welcome.desktop.past')}
+          {t('content.welcome.highlights.games')}
+        </li>
+        <li>
+          <b className="text-base-content">{t('icons.music')}</b>
+          {'：'}
+          {t('content.welcome.highlights.music')}
+        </li>
+        <li>
+          <b className="text-base-content">{t('icons.past')}</b>
+          {'：'}
+          {t('content.welcome.highlights.past')}
         </li>
       </ul>
+      <p className="text-xs text-base-content/50">{t('content.welcome.tip')}</p>
     </div>
   )
 }
@@ -336,6 +343,7 @@ export function MusicContent() {
   const duration = player.duration
   // 「在 Apple Music 打开」统一指向歌单页（而非当前歌曲的专辑页）
   const playlistUrl = MUSIC_PLAYLIST.appleMusicUrl
+  const volumePercent = player.isMuted ? 0 : Math.round(player.volume * 100)
   // 音量滑杆：hover 音量按钮时展开
   const [volumeOpen, setVolumeOpen] = useState(false)
 
@@ -487,16 +495,27 @@ export function MusicContent() {
                   volumeOpen ? 'opacity-100' : 'pointer-events-none translate-x-1 opacity-0'
                 }`}
               >
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  step={10}
-                  value={player.isMuted ? 0 : Math.round(player.volume * 100)}
-                  onChange={(event) => player.setVolume(Number(event.target.value) / 100)}
-                  aria-label={t('content.music.volume')}
-                  className="range range-primary range-xs w-24"
-                />
+                <div className="relative w-24">
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={10}
+                    value={volumePercent}
+                    onChange={(event) => player.setVolume(Number(event.target.value) / 100)}
+                    aria-label={t('content.music.volume')}
+                    className="range range-primary range-xs w-full"
+                  />
+                  {/* 滑钮 Tooltip：显示当前音量 */}
+                  {volumeOpen && (
+                    <span
+                      className="pointer-events-none absolute -top-5 -translate-x-1/2 rounded bg-neutral px-1 py-0.5 text-[9px] leading-none text-neutral-content shadow"
+                      style={{ left: `${Math.min(96, Math.max(4, volumePercent))}%` }}
+                    >
+                      {volumePercent}%
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>

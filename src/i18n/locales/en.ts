@@ -45,12 +45,15 @@ export default {
     aboutTitle: 'About',
     aboutIntro: 'A personal blog built as a desktop environment. Still a prototype.',
     welcome: {
-      intro: 'Welcome to my personal site. Here is the desktop navigation:',
-      desktop: {
-        feedback: 'Contact me XD',
-        saltlab: 'Various experimental projects',
-        past: 'The original blog site',
+      intro: "Hi, I'm SaltA. Welcome to my little desktop in the browser.",
+      body: 'SaltLab is a personal site built as a desktop environment: open windows from the icons, drag them around, and switch themes or languages in Settings.',
+      highlights: {
+        projects: 'Experiments and small tools',
+        games: 'Fan-made toys, including Teriri Blocks',
+        music: 'A playlist with Apple Music previews',
+        past: 'The previous blog',
       },
+      tip: 'Start with the icons on the left, or open Settings to make it yours.',
     },
     labList: {
       itgTitle: 'Infinite Title Generator',

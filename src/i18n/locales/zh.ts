@@ -45,12 +45,15 @@ export default {
     aboutTitle: '关于',
     aboutIntro: '以桌面环境为形态的个人博客。目前仍是原型。',
     welcome: {
-      intro: '欢迎来到我的个人站点，下面是桌面导航：',
-      desktop: {
-        feedback: '联系我XD',
-        saltlab: '各种实验性质项目',
-        past: '原博客站点',
+      intro: '你好，我是 SaltA。欢迎来到这个浏览器里的小桌面。',
+      body: 'SaltLab 是一个以桌面环境为形态的个人站点：从图标打开窗体、拖动摆放，在设置里切换主题与语言。',
+      highlights: {
+        projects: '一些实验性小工具',
+        games: '包括特日日方块在内的同人小游戏',
+        music: '含 Apple Music 试听的歌单',
+        past: '之前的博客',
       },
+      tip: '可以先从左边的图标逛起，或打开「设置」把它调成你喜欢的样子。',
     },
     labList: {
       itgTitle: 'Infinite Title Generator',
