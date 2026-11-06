@@ -15,4 +15,5 @@ export const windowIcons: Record<string, LucideIcon> = {
   teririBlocks: Blocks,
   music: Music,
   cor3: Cor3Icon as unknown as LucideIcon,
+  frago: Cor3Icon as unknown as LucideIcon,
 }

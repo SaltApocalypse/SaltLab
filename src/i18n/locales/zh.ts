@@ -21,6 +21,7 @@ export default {
     teririBlocks: '特日日方块',
     music: '音乐',
     cor3: 'Cor3',
+    frago: 'FRAGO // DOSSIER GENERATOR',
   },
   statusBar: {
     shutdown: '关闭页面',

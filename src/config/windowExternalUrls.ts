@@ -4,4 +4,5 @@ export const windowExternalUrls: Record<string, string> = {
   itg: 'https://lab.salta.top/infinite-title-generator/',
   teririBlocks: 'https://game.salta.top/teriri-blocks/',
   cor3: 'https://lab.salta.top/frago-dossier/',
+  frago: 'https://lab.salta.top/frago-dossier/',
 }

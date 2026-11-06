@@ -84,13 +84,13 @@ export function LabContent() {
           <div className="flex items-center gap-3 text-xs">
             <button
               type="button"
-              onClick={() => openWindow('cor3', t('content.labList.fragoTitle'))}
+              onClick={() => openWindow('frago', t('content.labList.fragoTitle'))}
               className="text-primary underline-offset-4 transition-colors duration-300 hover:underline"
             >
               {t('content.labList.fragoOpen')}
             </button>
             <a
-              href={windowExternalUrls.cor3}
+              href={windowExternalUrls.frago}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-primary underline-offset-4 transition-colors duration-300 hover:underline"
@@ -286,6 +286,11 @@ export function PastContent() {
 
 export function ItgContent() {
   return <ExternalSiteContent src={windowExternalUrls.itg!} />
+}
+
+/** FRAGO Dossier 完整工具：与 ITG 一致，在窗体内以 iframe 打开 */
+export function FragoContent() {
+  return <ExternalSiteContent src={windowExternalUrls.frago!} />
 }
 
 export function TeririBlocksContent() {

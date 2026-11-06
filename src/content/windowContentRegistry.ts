@@ -2,6 +2,7 @@ import type { ComponentType } from 'react'
 import {
   AboutContent,
   Cor3Content,
+  FragoContent,
   GamesContent,
   ItgContent,
   LabContent,
@@ -25,4 +26,5 @@ export const windowContents: Record<string, ComponentType> = {
   teririBlocks: TeririBlocksContent,
   music: MusicContent,
   cor3: Cor3Content,
+  frago: FragoContent,
 }

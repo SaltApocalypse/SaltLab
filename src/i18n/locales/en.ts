@@ -21,6 +21,7 @@ export default {
     teririBlocks: 'Teriri Blocks',
     music: 'Music',
     cor3: 'Cor3',
+    frago: 'FRAGO // DOSSIER GENERATOR',
   },
   statusBar: {
     shutdown: 'Close page',
