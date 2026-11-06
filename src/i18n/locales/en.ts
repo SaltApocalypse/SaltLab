@@ -63,6 +63,11 @@ export default {
         'Infinite Title Generator is a fan project inspired by Halo Infinite: it replicates the game\u2019s login-screen title animation on the frontend.',
       itgOpen: 'Experience Now',
       itgOpenExternal: 'Open in new tab',
+      fragoTitle: 'FRAGO // DOSSIER GENERATOR',
+      fragoIntro:
+        'FRAGO // DOSSIER GENERATOR is a fan project inspired by Cor3 / Fragmentary Order: a frontend dossier generator with customizable nickname, avatar, rank, and PNG export.',
+      fragoOpen: 'Experience Now',
+      fragoOpenExternal: 'Open in new tab',
     },
     gamesList: {
       teririBlocksIntro: "Theresa's version of Tetris",

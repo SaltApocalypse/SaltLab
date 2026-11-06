@@ -70,6 +70,37 @@ export function LabContent() {
           </div>
         </div>
       </div>
+
+      {/* 第二行：FRAGO Dossier；插图尚未提供，按要求一直显示加载图标 */}
+      <div className="mt-4 flex gap-4 border-t border-base-300 pt-4">
+        <div className="relative flex h-20 w-[120px] shrink-0 items-center justify-center border border-base-300 bg-base-200/40">
+          <span className="loading loading-spinner loading-md text-primary" />
+        </div>
+        <div className="min-w-0 flex-1 space-y-2">
+          <h3 className="text-sm font-semibold">{t('content.labList.fragoTitle')}</h3>
+          <p className="text-xs leading-relaxed text-base-content/70">
+            {t('content.labList.fragoIntro')}
+          </p>
+          <div className="flex items-center gap-3 text-xs">
+            <button
+              type="button"
+              onClick={() => openWindow('cor3', t('content.labList.fragoTitle'))}
+              className="text-primary underline-offset-4 transition-colors duration-300 hover:underline"
+            >
+              {t('content.labList.fragoOpen')}
+            </button>
+            <a
+              href={windowExternalUrls.cor3}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-primary underline-offset-4 transition-colors duration-300 hover:underline"
+            >
+              {t('content.labList.fragoOpenExternal')}
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

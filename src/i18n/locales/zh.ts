@@ -63,6 +63,11 @@ export default {
         'Infinite Title Generator 是一款受 Halo Infinite 启发制作的粉丝项目：在前端复刻游戏登录页标题动画效果。',
       itgOpen: '立即体验',
       itgOpenExternal: '在新标签页打开',
+      fragoTitle: 'FRAGO // DOSSIER GENERATOR',
+      fragoIntro:
+        'FRAGO // DOSSIER GENERATOR 是一款受 Cor3 / Fragmentary Order 启发制作的粉丝项目：在前端生成游戏资料卡风格的名片，支持自定义昵称、头像、军衔与 PNG 导出。',
+      fragoOpen: '立即体验',
+      fragoOpenExternal: '在新标签页打开',
     },
     gamesList: {
       teririBlocksIntro: '德丽莎版俄罗斯方块',
