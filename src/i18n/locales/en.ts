@@ -7,6 +7,7 @@ export default {
     games: 'Games',
     settings: 'Settings',
     music: 'Music',
+    cor3: 'Cor3',
   },
   windows: {
     welcome: 'Welcome',
@@ -19,6 +20,7 @@ export default {
     games: 'Games',
     teririBlocks: 'Teriri Blocks',
     music: 'Music',
+    cor3: 'Cor3',
   },
   statusBar: {
     shutdown: 'Close page',

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { ComponentType } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink, Music, Pause, Play, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react'
 import { CDN_BASE_URL } from '../config/cdn'
@@ -258,6 +259,34 @@ export function ItgContent() {
 
 export function TeririBlocksContent() {
   return <ExternalSiteContent src={windowExternalUrls.teririBlocks!} />
+}
+
+/** Cor3 名片嵌入脚本（生产环境；由 embed.js 注册 <frago-card>） */
+const COR3_EMBED_SCRIPT_SRC = 'https://lab.salta.top/frago-dossier/embed.js'
+
+/** 当前名片数据（Base64URL 编码；头像使用线上资源地址） */
+const COR3_EMBED_DATA =
+  'eyJuaWNrbmFtZSI6IlNhbHRfQXBvY2FseXBzZSIsInJhbmsiOiJ0aGUtcGlsbGFyIiwiZ2FtZVZlcnNpb24iOiJmb3VuZGVycyIsImF2YXRhciI6Imh0dHBzOi8vbGFiLnNhbHRhLnRvcC9mcmFnby1kb3NzaWVyL2Fzc2V0cy9kZWZhdWx0LWF2YXRhci5wbmcifQ'
+
+/** 自定义元素在 React 中的类型包装（属性名即 HTML attribute） */
+const FragoCard = 'frago-card' as unknown as ComponentType<{ data: string }>
+
+/** Cor3 名片：加载 embed.js 并渲染 Web Component */
+export function Cor3Content() {
+  useEffect(() => {
+    if (document.getElementById('cor3-frago-embed-script')) return
+    const script = document.createElement('script')
+    script.id = 'cor3-frago-embed-script'
+    script.src = COR3_EMBED_SCRIPT_SRC
+    script.defer = true
+    document.body.appendChild(script)
+  }, [])
+
+  return (
+    <div className="flex min-h-full items-start justify-center px-2 py-2">
+      <FragoCard data={COR3_EMBED_DATA} />
+    </div>
+  )
 }
 
 /** CDN 资源：特日日方块插图（120×80） */

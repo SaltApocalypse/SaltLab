@@ -1,6 +1,8 @@
 import { FaceGrinning, FlaskConical, FolderArchive, Gamepad2, MessageSquareHeart, Music, Settings } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { gridCell } from '../desktop/grid'
 import type { DesktopIconData } from '../desktop/types'
+import { Cor3Icon } from '../components/Cor3Icon'
 
 export const desktopIcons: DesktopIconData[] = [
   {
@@ -58,5 +60,13 @@ export const desktopIcons: DesktopIconData[] = [
     type: 'window',
     target: 'past',
     position: gridCell(2, 1),
+  },
+  {
+    id: 'cor3',
+    titleKey: 'icons.cor3',
+    icon: Cor3Icon as unknown as LucideIcon,
+    type: 'window',
+    target: 'cor3',
+    position: gridCell(0, 2),
   },
 ]

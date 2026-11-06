@@ -17,6 +17,7 @@ React 19 · Vite 8 · TypeScript · TanStack Router · Tailwind CSS v4 · daisyU
 - **迷你卡片**：桌面右上角可复用的信息卡片（与窗体风格一致、自上而下排列）；音乐卡片随播放出现，支持进度、音量、上一首/播放暂停/下一首；关闭卡片只暂停音乐，不影响窗体
 - **音乐**：全局单例播放器（关闭窗体后继续播放，暂停 3 分钟后释放音频流）；静态 Apple Music 歌单（30s Preview）；进度拖动、音量调节（滑钮 Tooltip）、静音、结束后自动下一首、播放失败/无 Preview 状态
 - **游戏**：特日日方块（Teriri Blocks）等
+- **Cor3 名片**：通过 `lab.salta.top/frago-dossier/embed.js` 以 Web Component 嵌入 FRAGO Dossier 名片
 - **i18n**：中 / 英双语，浏览器语言自动识别，localStorage 持久化
 - **持久化**：主题 / 夜间模式 / 语言 / 图标位置 / 窗体遮罩
 
@@ -84,4 +85,5 @@ pnpm build
 ## 说明
 
 - 图标插画、logo 等 CDN 资源通过 jsDelivr 加载（`src/config/cdn.ts`）。
+- `public/cor3.svg`（Cor3 窗体图标）来自 <https://cor3.gg>，版权归对应权利人所有。
 - 更细的仓库约定与陷阱见 `AGENTS.md`。

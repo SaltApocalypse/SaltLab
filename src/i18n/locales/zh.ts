@@ -7,6 +7,7 @@ export default {
     games: '游戏',
     settings: '设置',
     music: '音乐',
+    cor3: 'Cor3',
   },
   windows: {
     welcome: '欢迎',
@@ -19,6 +20,7 @@ export default {
     games: '游戏',
     teririBlocks: '特日日方块',
     music: '音乐',
+    cor3: 'Cor3',
   },
   statusBar: {
     shutdown: '关闭页面',
