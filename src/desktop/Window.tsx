@@ -8,7 +8,7 @@ import { useTheme } from '../theme/ThemeProvider'
 import type { LightButtonProps, PanelProps } from '../theme/themes'
 import { usePointerDrag } from '../hooks/usePointerDrag'
 import { useDesktopBounds } from './desktopContext'
-import { MIN_WINDOW_SIZE, useDesktopStore } from './desktopStore'
+import { FIXED_WINDOW_SIZES, MIN_WINDOW_SIZE, useDesktopStore } from './desktopStore'
 import type { WindowState } from './desktopStore'
 import { clampToBounds } from './grid'
 import type { Position, Size } from './types'
@@ -146,6 +146,8 @@ export const Window = memo(function Window({ window: win, children }: WindowProp
   })
 
   const TitleIcon = windowIcons[win.type]
+  // 固定尺寸窗口（如 Cor3）：不可最大化、不可拖拽缩放
+  const fixedSize = Boolean(FIXED_WINDOW_SIZES[win.type])
   // 外部网站窗体：标题栏提供「新标签页打开」入口
   const externalUrl = windowExternalUrls[win.type]
 
@@ -179,7 +181,9 @@ export const Window = memo(function Window({ window: win, children }: WindowProp
         <div
           className="flex cursor-move touch-none select-none items-center justify-between gap-2"
           {...dragHandlers}
-          onDoubleClick={() => toggleMaximize(win.id, bounds)}
+          onDoubleClick={() => {
+            if (!fixedSize) toggleMaximize(win.id, bounds)
+          }}
         >
           <span className="flex min-w-0 items-center gap-2">
             {TitleIcon && <TitleIcon size={14} className="shrink-0" />}
@@ -207,15 +211,17 @@ export const Window = memo(function Window({ window: win, children }: WindowProp
             >
               <Minus size={14} />
             </CloseButton>
-            <CloseButton
-              size="xs"
-              className="justify-center px-2"
-              aria-label={t(win.maximized ? 'window.restore' : 'window.maximize')}
-              onPointerDown={(event) => event.stopPropagation()}
-              onClick={() => toggleMaximize(win.id, bounds)}
-            >
-              {win.maximized ? <Copy size={14} /> : <Square size={14} />}
-            </CloseButton>
+            {!fixedSize && (
+              <CloseButton
+                size="xs"
+                className="justify-center px-2"
+                aria-label={t(win.maximized ? 'window.restore' : 'window.maximize')}
+                onPointerDown={(event) => event.stopPropagation()}
+                onClick={() => toggleMaximize(win.id, bounds)}
+              >
+                {win.maximized ? <Copy size={14} /> : <Square size={14} />}
+              </CloseButton>
+            )}
             <CloseButton
               size="xs"
               className="justify-center px-2"
@@ -233,9 +239,9 @@ export const Window = memo(function Window({ window: win, children }: WindowProp
         <div className="my-3 h-px w-full bg-base-300" />
         <div className="no-scrollbar min-h-40 min-w-0 flex-1 overflow-auto pr-2">{children}</div>
       </Panel>
-      {/* 右下角缩放手柄：斜纹装饰提示可拖拽缩放（最大化时隐藏）。
+      {/* 右下角缩放手柄：斜纹装饰提示可拖拽缩放（最大化 / 固定尺寸窗口时隐藏）。
           置于窗口根节点（被缩放的本体）而非主题 Panel 内部，避免依赖主题 fill 结构导致的手柄错位/垂直失效 */}
-      {!win.maximized && (
+      {!win.maximized && !fixedSize && (
         <span
           className="absolute bottom-0 right-0 z-10 flex h-6 w-6 cursor-nwse-resize touch-none select-none items-end justify-end p-1.5"
           {...resizeHandlers}

@@ -52,6 +52,12 @@ const initialIcons: DesktopIconData[] = desktopIcons.map((icon) => {
 /** 窗体最小尺寸（缩放下限 / 还原下限） */
 export const MIN_WINDOW_SIZE: Size = { width: 280, height: 200 }
 
+/** 固定尺寸窗口：默认尺寸贴合内容卡片，禁止缩放与最大化 */
+export const FIXED_WINDOW_SIZES: Readonly<Record<string, Size>> = {
+  // Cor3：920px 宽名片 + 窗体留白（宽 976 / 高 507）
+  cor3: { width: 976, height: 507 },
+}
+
 /** 最大化时与桌面四边的留白 */
 export const MAXIMIZED_MARGIN = 8
 
@@ -179,10 +185,17 @@ interface DesktopStore {
 const DEFAULT_WINDOW_SIZE: Size = { width: 560, height: 400 }
 
 // 沉浸式窗口类型：默认尺寸 = 视口四边各收缩一个图标网格距离（ICON_SLOT）
-const IMMERSIVE_WINDOW_TYPES: ReadonlySet<string> = new Set(['past', 'itg', 'teririBlocks', 'cor3'])
+const IMMERSIVE_WINDOW_TYPES: ReadonlySet<string> = new Set(['past', 'itg', 'teririBlocks'])
 
-/** 按窗口类型计算默认尺寸；沉浸式窗口贴近全屏，其余使用标准尺寸 */
+/** 按窗口类型计算默认尺寸；固定尺寸窗口贴合内容，沉浸式窗口贴近全屏，其余使用标准尺寸 */
 function windowDefaultSize(type: string, viewportWidth: number, viewportHeight: number): Size {
+  const fixed = FIXED_WINDOW_SIZES[type]
+  if (fixed) {
+    return {
+      width: Math.min(fixed.width, viewportWidth - 16),
+      height: Math.min(fixed.height, viewportHeight - 16),
+    }
+  }
   if (IMMERSIVE_WINDOW_TYPES.has(type)) {
     return {
       width: Math.max(280, viewportWidth - ICON_SLOT * 2),
@@ -305,6 +318,9 @@ export const useDesktopStore = create<DesktopStore>((set) => ({
 
   toggleMaximize: (id, bounds) =>
     set((state) => {
+      // 固定尺寸窗口（如 Cor3）不允许最大化
+      const target = state.windows.find((win) => win.id === id)
+      if (!target || FIXED_WINDOW_SIZES[target.type]) return state
       const windows = raiseWindow(
         state.windows.map((win) => {
           if (win.id !== id) return win
@@ -368,9 +384,14 @@ export const useDesktopStore = create<DesktopStore>((set) => ({
     })),
 
   resizeWindow: (id, size) =>
-    set((state) => ({
-      windows: state.windows.map((win) => (win.id === id ? { ...win, size } : win)),
-    })),
+    set((state) => {
+      // 固定尺寸窗口（如 Cor3）不允许拖拽缩放
+      const target = state.windows.find((win) => win.id === id)
+      if (!target || FIXED_WINDOW_SIZES[target.type]) return state
+      return {
+        windows: state.windows.map((win) => (win.id === id ? { ...win, size } : win)),
+      }
+    }),
 
   moveIcon: (id, position, bounds) =>
     set((state) => {

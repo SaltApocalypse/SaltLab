@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { ComponentType } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink, Music, Pause, Play, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react'
@@ -271,20 +271,102 @@ const COR3_EMBED_DATA =
 /** 自定义元素在 React 中的类型包装（属性名即 HTML attribute） */
 const FragoCard = 'frago-card' as unknown as ComponentType<{ data: string }>
 
-/** Cor3 名片：加载 embed.js 并渲染 Web Component */
+/** 等待名片 Shadow DOM 内图片加载完成（最多 8 秒） */
+function waitForCor3Card(host: Element, onReady: () => void) {
+  const startedAt = performance.now()
+  let raf = 0
+  const tick = () => {
+    const shadow = host.shadowRoot
+    const images = shadow ? Array.from(shadow.querySelectorAll('img')) : []
+    const rendered = Boolean(shadow?.querySelector('.frago-embed__card'))
+    if (
+      (rendered && images.length > 0 && images.every((image) => image.complete)) ||
+      performance.now() - startedAt > 8000
+    ) {
+      onReady()
+      return
+    }
+    raf = requestAnimationFrame(tick)
+  }
+  tick()
+  return () => cancelAnimationFrame(raf)
+}
+
+/** Cor3 名片：加载 embed.js、等待卡片渲染与图片加载，期间显示与「旧日」一致的加载图标 */
 export function Cor3Content() {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [ready, setReady] = useState(false)
+
   useEffect(() => {
-    if (document.getElementById('cor3-frago-embed-script')) return
-    const script = document.createElement('script')
-    script.id = 'cor3-frago-embed-script'
-    script.src = COR3_EMBED_SCRIPT_SRC
-    script.defer = true
-    document.body.appendChild(script)
+    let disposed = false
+    let cancelWait: (() => void) | undefined
+    let fallback: number | undefined
+
+    const finish = () => {
+      if (!disposed) setReady(true)
+    }
+    const waitForCard = () => {
+      const host = cardRef.current?.querySelector('frago-card')
+      if (!host) {
+        finish()
+        return
+      }
+      cancelWait = waitForCor3Card(host, finish)
+    }
+
+    if (customElements.get('frago-card')) {
+      waitForCard()
+      return () => {
+        disposed = true
+        cancelWait?.()
+      }
+    }
+
+    const script =
+      (document.getElementById('cor3-frago-embed-script') as HTMLScriptElement | null) ??
+      document.createElement('script')
+    const onLoad = () => {
+      if (fallback !== undefined) window.clearTimeout(fallback)
+      waitForCard()
+    }
+    const onError = () => finish()
+    script.addEventListener('load', onLoad)
+    script.addEventListener('error', onError)
+    // 脚本已有但未触发 load（极端情况）时兜底，避免加载图标常驻
+    fallback = window.setTimeout(finish, 12000)
+
+    if (!script.parentNode) {
+      script.id = 'cor3-frago-embed-script'
+      script.src = COR3_EMBED_SCRIPT_SRC
+      script.defer = true
+      document.body.appendChild(script)
+    }
+
+    return () => {
+      disposed = true
+      cancelWait?.()
+      if (fallback !== undefined) window.clearTimeout(fallback)
+      script.removeEventListener('load', onLoad)
+      script.removeEventListener('error', onError)
+    }
   }, [])
 
   return (
-    <div className="flex min-h-full items-start justify-center px-2 py-2">
-      <FragoCard data={COR3_EMBED_DATA} />
+    <div className="relative h-full w-full">
+      {/* 加载中提示：与「旧日」等 iframe 窗体一致 */}
+      {!ready && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <span className="loading loading-spinner loading-lg text-primary" />
+        </div>
+      )}
+      <div
+        ref={cardRef}
+        className={`flex min-h-full items-start justify-center px-2 py-2 transition-opacity duration-500 ${
+          ready ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <FragoCard data={COR3_EMBED_DATA} />
+      </div>
     </div>
   )
 }
